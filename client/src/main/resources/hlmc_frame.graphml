@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+    <key id="label" for="node" attr.name="label" attr.type="string"/>
+    <key id="modality" for="edge" attr.name="modality" attr.type="string"/>
+    <key id="nominals" for="node" attr.name="nominals" attr.type="string"/>
+    <key id="propsymbols" for="node" attr.name="propsymbols" attr.type="string"/>
+    <graph id="G" edgedefault="directed">
+        <node id="t3">
+            <data key="label">t3</data>
+        </node>
+        <node id="t2">
+            <data key="label">t2</data>
+        </node>
+        <node id="root_node">
+            <data key="label">root_node</data>
+            <data key="nominals">root</data>
+        </node>
+        <node id="t1">
+            <data key="label">t1</data>
+        </node>
+        <node id="b2">
+            <data key="label">b2</data>
+        </node>
+        <node id="a31">
+            <data key="label">a31</data>
+        </node>
+        <node id="index_node">
+            <data key="label">index_node</data>
+        </node>
+        <node id="d2">
+            <data key="label">d2</data>
+        </node>
+        <node id="d3">
+            <data key="label">d3</data>
+        </node>
+        <node id="a12">
+            <data key="label">a12</data>
+        </node>
+        <node id="a21">
+            <data key="label">a21</data>
+        </node>
+        <node id="b1">
+            <data key="label">b1</data>
+            <data key="nominals">bind_x</data>
+        </node>
+        <node id="a11">
+            <data key="label">a11</data>
+        </node>
+        <node id="a1">
+            <data key="label">a1</data>
+        </node>
+        <edge source="b1" target="a12">
+            <data key="modality">author</data>
+        </edge>
+        <edge source="b1" target="a11">
+            <data key="modality">author</data>
+        </edge>
+        <edge source="a1" target="a31">
+            <data key="modality">author</data>
+        </edge>
+        <edge source="b2" target="a21">
+            <data key="modality">author</data>
+        </edge>
+        <edge source="b1" target="t1">
+            <data key="modality">title</data>
+        </edge>
+        <edge source="a1" target="t3">
+            <data key="modality">title</data>
+        </edge>
+        <edge source="b2" target="t2">
+            <data key="modality">title</data>
+        </edge>
+        <edge source="root_node" target="index_node">
+            <data key="modality">biblio</data>
+        </edge>
+        <edge source="b1" target="b1">
+            <data key="modality">cites</data>
+        </edge>
+        <edge source="a1" target="b2">
+            <data key="modality">cites</data>
+        </edge>
+        <edge source="b2" target="a1">
+            <data key="modality">cites</data>
+        </edge>
+        <edge source="index_node" target="a1">
+            <data key="modality">paper</data>
+        </edge>
+        <edge source="index_node" target="b1">
+            <data key="modality">book</data>
+        </edge>
+        <edge source="index_node" target="b2">
+            <data key="modality">book</data>
+        </edge>
+        <edge source="a1" target="d3">
+            <data key="modality">date</data>
+        </edge>
+        <edge source="b2" target="d2">
+            <data key="modality">date</data>
+        </edge>
+    </graph>
+</graphml>

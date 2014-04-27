@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<morph name="synsem.ccg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../morph.xsd">
+  <entry word="включи" macros="@imp @vf-to-imp" pos="V" stem="включать" class="action" pred="ON"/>
+  <entry word="включить" macros="@imp @vf-to-imp" pos="V" stem="включать" class="action" pred="ON"/>
+  <entry word="выключи" macros="@imp @vf-to-imp" pos="V" stem="выключать" class="action" pred="OFF"/>
+  <entry word="выключить" macros="@imp @vf-to-imp" pos="V" stem="выключать" class="action" pred="OFF"/>
+  <entry word="открой" macros="@imp @vf-to-imp" pos="V" stem="открывать" class="action" pred="OPEN"/>
+  <entry word="открыть" macros="@imp @vf-to-imp" pos="V" stem="открывать" class="action" pred="OPEN"/>
+  <entry word="закрой" macros="@imp @vf-to-imp" pos="V" stem="закрывать" class="action" pred="CLOSE"/>
+  <entry word="закрыть" macros="@imp @vf-to-imp" pos="V" stem="закрывать" class="action" pred="CLOSE"/>
+  <entry word="диван" macros="@s-sg @nom @masc" pos="Noun" stem="диван" class="thing" pred="диван"/>
+  <entry word="дивана" macros="@s-sg @gen @masc" pos="Noun" stem="диван" class="thing" pred="диван"/>
+  <entry word="диван" macros="@s-sg @acc @masc" pos="Noun" stem="диван" class="thing" pred="диван"/>
+  <entry word="диваном" macros="@s-sg @abl @masc" pos="Noun" stem="диван" class="thing" pred="диван"/>
+  <entry word="диване" macros="@s-sg @loc @masc" pos="Noun" stem="диван" class="thing" pred="диван"/>
+  <entry word="диваны" macros="@s-pl @nom @masc" pos="Noun" stem="диван" class="thing" pred="диван"/>
+  <entry word="диванов" macros="@s-pl @gen @masc" pos="Noun" stem="диван" class="thing" pred="диван"/>
+  <entry word="диваны" macros="@s-pl @acc @masc" pos="Noun" stem="диван" class="thing" pred="диван"/>
+  <entry word="диванами" macros="@s-pl @abl @masc" pos="Noun" stem="диван" class="thing" pred="диван"/>
+  <entry word="диванах" macros="@s-pl @loc @masc" pos="Noun" stem="диван" class="thing" pred="диван"/>
+  <entry word="зеркало" macros="@s-sg @nom @neut" pos="Noun" stem="зеркало" class="thing" pred="зеркало"/>
+  <entry word="зеркала" macros="@s-sg @gen @neut" pos="Noun" stem="зеркало" class="thing" pred="зеркало"/>
+  <entry word="зеркало" macros="@s-sg @acc @neut" pos="Noun" stem="зеркало" class="thing" pred="зеркало"/>
+  <entry word="зеркала" macros="@s-pl @nom @neut" pos="Noun" stem="зеркало" class="thing" pred="зеркало"/>
+  <entry word="зеркал" macros="@s-pl @gen @neut" pos="Noun" stem="зеркало" class="thing" pred="зеркало"/>
+  <entry word="зеркала" macros="@s-pl @acc @neut" pos="Noun" stem="зеркало" class="thing" pred="зеркало"/>
+  <entry word="кровать" macros="@s-sg @nom @fem" pos="Noun" stem="кровать" class="thing" pred="кровать"/>
+  <entry word="кровати" macros="@s-sg @gen @fem" pos="Noun" stem="кровать" class="thing" pred="кровать"/>
+  <entry word="кровать" macros="@s-sg @acc @fem" pos="Noun" stem="кровать" class="thing" pred="кровать"/>
+  <entry word="кровати" macros="@s-pl @nom @fem" pos="Noun" stem="кровать" class="thing" pred="кровать"/>
+  <entry word="кроватей" macros="@s-pl @gen @fem" pos="Noun" stem="кровать" class="thing" pred="кровать"/>
+  <entry word="кровати" macros="@s-pl @acc @fem" pos="Noun" stem="кровать" class="thing" pred="кровать"/>
+  <entry word="свет" macros="@s-sg @nom @masc" pos="Noun" stem="свет" class="thing" pred="свет"/>
+  <entry word="света" macros="@s-sg @gen @masc" pos="Noun" stem="свет" class="thing" pred="свет"/>
+  <entry word="свет" macros="@s-sg @acc @masc" pos="Noun" stem="свет" class="thing" pred="свет"/>
+  <entry word="лампа" macros="@s-sg @nom @fem" pos="Noun" stem="лампа" class="thing" pred="лампа"/>
+  <entry word="лампы" macros="@s-sg @gen @fem" pos="Noun" stem="лампа" class="thing" pred="лампа"/>
+  <entry word="лампу" macros="@s-sg @acc @fem" pos="Noun" stem="лампа" class="thing" pred="лампа"/>
+  <entry word="лампы" macros="@s-pl @nom @fem" pos="Noun" stem="лампа" class="thing" pred="лампа"/>
+  <entry word="ламп" macros="@s-pl @gen @fem" pos="Noun" stem="лампа" class="thing" pred="лампа"/>
+  <entry word="лампы" macros="@s-pl @acc @fem" pos="Noun" stem="лампа" class="thing" pred="лампа"/>
+  <entry word="лампочка" macros="@s-sg @nom @fem" pos="Noun" stem="лампочка" class="thing" pred="лампочка"/>
+  <entry word="лампочек" macros="@s-sg @gen @fem" pos="Noun" stem="лампочка" class="thing" pred="лампочка"/>
+  <entry word="лампочку" macros="@s-sg @acc @fem" pos="Noun" stem="лампочка" class="thing" pred="лампочка"/>
+  <entry word="лампочки" macros="@s-pl @nom @fem" pos="Noun" stem="лампочка" class="thing" pred="лампочка"/>
+  <entry word="лампочек" macros="@s-pl @gen @fem" pos="Noun" stem="лампочка" class="thing" pred="лампочка"/>
+  <entry word="лампочки" macros="@s-pl @acc @fem" pos="Noun" stem="лампочка" class="thing" pred="лампочка"/>
+  <entry word="стол" macros="@s-sg @nom @masc" pos="Noun" stem="стол" class="e-location" pred="стол"/>
+  <entry word="стола" macros="@s-sg @gen @masc" pos="Noun" stem="стол" class="e-location" pred="стол"/>
+  <entry word="столу" macros="@s-sg @dat @masc" pos="Noun" stem="стол" class="e-location" pred="стол"/>
+  <entry word="стол" macros="@s-sg @acc @masc" pos="Noun" stem="стол" class="e-location" pred="стол"/>
+  <entry word="столом" macros="@s-sg @abl @masc" pos="Noun" stem="стол" class="e-location" pred="стол"/>
+  <entry word="столе" macros="@s-sg @loc @masc" pos="Noun" stem="стол" class="e-location" pred="стол"/>
+  <entry word="кухня" macros="@s-sg @nom @fem" pos="Noun" stem="кухня" class="e-place" pred="кухня"/>
+  <entry word="кухни" macros="@s-sg @gen @fem" pos="Noun" stem="кухня" class="e-place" pred="кухня"/>
+  <entry word="кухне" macros="@s-sg @loc @fem" pos="Noun" stem="кухня" class="e-place" pred="кухня"/>
+  <entry word="прихожая" macros="@s-sg @nom @fem" pos="Noun" stem="прихожая" class="e-place" pred="прихожая"/>
+  <entry word="прихожей" macros="@s-sg @gen @fem" pos="Noun" stem="прихожая" class="e-place" pred="прихожая"/>
+  <entry word="прихожей" macros="@s-sg @abl @fem" pos="Noun" stem="прихожая" class="e-place" pred="прихожая"/>
+  <entry word="красный" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красного" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красному" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красный" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красного" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красным" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красном" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красная" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красной" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красной" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красную" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красной" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красной" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красное" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красного" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красному" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красное" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красным" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красном" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красные" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красных" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красным" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красные" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красными" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="красных" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="красный-adj" class="q-color" красный="красный"/>
+  <entry word="белый" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белого" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белому" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белый" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белого" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белым" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белом" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белая" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белой" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белой" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белую" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белой" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белой" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белое" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белого" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белому" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белое" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белым" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белом" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белые" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белых" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белым" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белые" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белыми" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="белых" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="белый-adj" class="q-color" белый="белый"/>
+  <entry word="желтый" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтого" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтому" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтый" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтого" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтым" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтом" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтая" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтой" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтой" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтую" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтой" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтой" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтое" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтого" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтому" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтое" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтым" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтом" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтые" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтых" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтым" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтые" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтыми" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="желтых" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="желтый-adj" class="q-color" жёлтый="жёлтый"/>
+  <entry word="черный" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черного" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черному" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черный" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черного" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черным" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черном" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черная" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черной" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черной" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черную" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черной" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черной" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черное" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черного" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черному" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черное" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черным" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черном" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черные" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черных" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черным" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черные" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черными" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="черных" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="черный-adj" class="q-color" черный="черный"/>
+  <entry word="серый" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серого" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серому" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серый" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серого" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серым" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="сером" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серая" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серой" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серой" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серую" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серой" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серой" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серое" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серого" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серому" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серое" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серым" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="сером" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серые" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серых" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серым" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серые" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серыми" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="серых" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="серый-adj" class="q-color" серый="серый"/>
+  <entry word="оранжевый" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевого" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевому" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевый" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевого" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевым" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевом" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевая" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевой" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевой" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевую" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевой" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевой" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевое" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевого" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевому" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевое" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевым" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевом" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевые" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевых" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевым" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевые" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевыми" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="оранжевых" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="оранжевый-adj" class="q-color" оранжевый="оранжевый"/>
+  <entry word="зеленый" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленого" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленому" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленый" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленого" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленым" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленом" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленая" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленой" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленой" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленую" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленой" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленой" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленое" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленого" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленому" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленое" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленым" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленом" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленые" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленых" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленым" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленые" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зелеными" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="зеленых" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="зеленый-adj" class="q-color" зелен="зелен"/>
+  <entry word="дикий" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикого" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикому" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикий" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикого" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="диким" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="диком" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикая" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикой" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикой" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикую" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикой" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикой" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикое" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикого" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикому" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикое" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикым" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="диком" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикые" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикых" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикым" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикые" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикыми" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="дикых" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="дикий-adj" class="q-quality" дикий="дикий"/>
+  <entry word="сухой" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухого" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухому" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухой" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухого" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухим" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухом" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухая" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухой" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухой" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухую" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухой" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухой" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухое" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухого" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухому" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухое" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухым" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухом" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухые" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухых" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухым" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухые" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухыми" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="сухых" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="сухой-adj" class="q-state" сухой="сухой"/>
+  <entry word="большой" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большого" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большому" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большой" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большого" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большим" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большом" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большая" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большой" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большой" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большую" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большой" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большой" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большое" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большого" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большому" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большое" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большым" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большом" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большые" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большых" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большым" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большые" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большыми" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="большых" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="большой-adj" class="q-size" большой="большой"/>
+  <entry word="боковой" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="бокового" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковому" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковой" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="бокового" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковым" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковом" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковая" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковой" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковой" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковую" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковой" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковой" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковое" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="бокового" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковому" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковое" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковым" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковом" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковые" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковых" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковым" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковые" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковыми" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="боковых" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="боковой-adj" class="m-location" боковой="боковой"/>
+  <entry word="электрической" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрического" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическому" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрической" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрического" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическым" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическом" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическая" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрической" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрической" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическую" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрической" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрической" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическое" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрического" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическому" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическое" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическым" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическом" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическые" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическых" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическым" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическые" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическыми" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="электрическых" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="электрической-adj" class="q-quality" электрический="электрический"/>
+  <entry word="верхный" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхного" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхному" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхный" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхного" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхным" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхном" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхная" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхной" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхной" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхную" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхной" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхной" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхное" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхного" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхному" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхное" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхным" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхном" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхные" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхных" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхным" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхные" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхными" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="верхных" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="верхный-adj" class="q-position" верхний="верхний"/>
+  <entry word="нижный" macros="@nom @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижного" macros="@gen @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижному" macros="@dat @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижный" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижного" macros="@acc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижным" macros="@abl @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижном" macros="@loc @s-sg @s-degree-base @masc @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижная" macros="@nom @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижной" macros="@gen @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижной" macros="@dat @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижную" macros="@acc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижной" macros="@abl @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижной" macros="@loc @s-sg @s-degree-base @fem @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижное" macros="@nom @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижного" macros="@gen @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижному" macros="@dat @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижное" macros="@acc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижным" macros="@abl @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижном" macros="@loc @s-sg @s-degree-base @neut @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижные" macros="@nom @s-pl @s-degree-base @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижных" macros="@gen @s-pl @s-degree-base @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижным" macros="@dat @s-pl @s-degree-base @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижные" macros="@acc @s-pl @s-degree-base @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижными" macros="@abl @s-pl @s-degree-base @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="нижных" macros="@loc @s-pl @s-degree-base @pre-n" pos="Adj" stem="нижный-adj" class="q-position" нижний="нижний"/>
+  <entry word="над" macros="@x-location @prep-all @abl" pos="Prep" stem="над" class="m-location" pred="над"/>
+  <entry word="под" macros="@x-location @prep-all @acc" pos="Prep" stem="под" class="m-location" pred="под"/>
+  <entry word="под" macros="@x-location @prep-all @abl" pos="Prep" stem="под" class="m-location" pred="под"/>
+  <entry word="на" macros="@x-location @prep-all @acc" pos="Prep" stem="на" class="m-location" pred="на"/>
+  <entry word="на" macros="@x-location @prep-all @loc" pos="Prep" stem="на" class="m-location" pred="на"/>
+  <entry word="в" macros="@x-location @prep-all @acc" pos="Prep" stem="в" class="m-location" pred="в"/>
+  <entry word="в" macros="@x-location @prep-all @loc" pos="Prep" stem="в" class="m-location" pred="в"/>
+  <entry word="у" macros="@x-location @prep-all @gen" pos="Prep" stem="у" class="m-location" pred="у"/>
+  <entry word="наверху" macros="@x-location @prep-all @gen" pos="Prep" stem="наверху" class="m-location" pred="наверху"/>
+  <entry word="сверху" macros="@x-location @prep-all @gen" pos="Prep" stem="сверху" class="m-location" pred="сверху"/>
+  <entry word="около" macros="@x-location @prep-all @gen" pos="Prep" stem="около" class="m-location" pred="около"/>
+  <entry word="возле" macros="@x-location @prep-all @gen" pos="Prep" stem="возле" class="m-location" pred="возле"/>
+  <entry word="и" macros="@s-pl @pl" pos="Coord-np-" stem="и-coord-np" class="entity" pred="и"/>
+  <entry word="и" pos="Coord-adj-" stem="и-coord-adj" class="quality" pred="и"/>
+  <entry word="и" pos="Coord-s-" stem="и-coord-s" class="event" pred="и"/>
+  <macro name="@1st">
+    <fs id="15">
+      <feat attr="PERS" val="1st"/>
+    </fs>
+    <fs id="9">
+      <feat attr="PERS" val="1st"/>
+    </fs>
+    <fs id="10">
+      <feat attr="PERS" val="1st"/>
+    </fs>
+    <fs id="11">
+      <feat attr="PERS" val="1st"/>
+    </fs>
+  </macro>
+  <macro name="@2nd">
+    <fs id="15">
+      <feat attr="PERS" val="2nd"/>
+    </fs>
+    <fs id="9">
+      <feat attr="PERS" val="2nd"/>
+    </fs>
+    <fs id="10">
+      <feat attr="PERS" val="2nd"/>
+    </fs>
+    <fs id="11">
+      <feat attr="PERS" val="2nd"/>
+    </fs>
+  </macro>
+  <macro name="@3rd">
+    <fs id="15">
+      <feat attr="PERS" val="3rd"/>
+    </fs>
+    <fs id="9">
+      <feat attr="PERS" val="3rd"/>
+    </fs>
+    <fs id="10">
+      <feat attr="PERS" val="3rd"/>
+    </fs>
+    <fs id="11">
+      <feat attr="PERS" val="3rd"/>
+    </fs>
+  </macro>
+  <macro name="@abl">
+    <fs id="15">
+      <feat attr="CASE" val="abl"/>
+    </fs>
+    <fs id="9">
+      <feat attr="CASE" val="abl"/>
+    </fs>
+    <fs id="25">
+      <feat attr="CASE" val="abl"/>
+    </fs>
+  </macro>
+  <macro name="@acc">
+    <fs id="15">
+      <feat attr="CASE" val="acc"/>
+    </fs>
+    <fs id="9">
+      <feat attr="CASE" val="acc"/>
+    </fs>
+    <fs id="25">
+      <feat attr="CASE" val="acc"/>
+    </fs>
+  </macro>
+  <macro name="@active">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Voice">
+          <prop name="active"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@cc-none">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="cc-none"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="cc-none"/>
+    </fs>
+  </macro>
+  <macro name="@comparative">
+    <lf>
+      <satop nomvar="M">
+        <diamond mode="Degree">
+          <prop name="comparative"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@continuous">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Aspect">
+          <prop name="continuous"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@dat">
+    <fs id="15">
+      <feat attr="CASE" val="dat"/>
+    </fs>
+    <fs id="9">
+      <feat attr="CASE" val="dat"/>
+    </fs>
+    <fs id="25">
+      <feat attr="CASE" val="dat"/>
+    </fs>
+  </macro>
+  <macro name="@degree-base">
+    <lf>
+      <satop nomvar="M">
+        <diamond mode="Degree">
+          <prop name="degree-base"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@degrees">
+    <lf>
+      <satop nomvar="M">
+        <diamond mode="Degree">
+          <prop name="degrees"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@dummy-there">
+    <fs id="15">
+      <feat attr="NFORM" val="dummy-there"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NFORM" val="dummy-there"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NFORM" val="dummy-there"/>
+    </fs>
+  </macro>
+  <macro name="@e-distal">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Proximity">
+          <prop name="e-distal"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@e-proximal">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Proximity">
+          <prop name="e-proximal"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@fem">
+    <fs id="15">
+      <feat attr="GEND" val="fem"/>
+    </fs>
+    <fs id="9">
+      <feat attr="GEND" val="fem"/>
+    </fs>
+    <fs id="25">
+      <feat attr="GEND" val="fem"/>
+    </fs>
+  </macro>
+  <macro name="@fin">
+    <fs id="10">
+      <feat attr="VFORM" val="fin"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="fin"/>
+    </fs>
+  </macro>
+  <macro name="@fin-clause">
+    <fs id="10">
+      <feat attr="VFORM" val="fin-clause"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="fin-clause"/>
+    </fs>
+  </macro>
+  <macro name="@fin-ctxt">
+    <fs id="10">
+      <feat attr="VFORM" val="fin-ctxt"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="fin-ctxt"/>
+    </fs>
+  </macro>
+  <macro name="@fin-deictic">
+    <fs id="10">
+      <feat attr="VFORM" val="fin-deictic"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="fin-deictic"/>
+    </fs>
+  </macro>
+  <macro name="@fin-ell">
+    <fs id="10">
+      <feat attr="VFORM" val="fin-ell"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="fin-ell"/>
+    </fs>
+  </macro>
+  <macro name="@fin-full">
+    <fs id="10">
+      <feat attr="VFORM" val="fin-full"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="fin-full"/>
+    </fs>
+  </macro>
+  <macro name="@for-ing">
+    <fs id="10">
+      <feat attr="VFORM" val="for-ing"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="for-ing"/>
+    </fs>
+  </macro>
+  <macro name="@full">
+    <fs id="15">
+      <feat attr="NFORM" val="full"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NFORM" val="full"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NFORM" val="full"/>
+    </fs>
+  </macro>
+  <macro name="@fut">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Tense">
+          <prop name="fut"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@gen">
+    <fs id="15">
+      <feat attr="CASE" val="gen"/>
+    </fs>
+    <fs id="9">
+      <feat attr="CASE" val="gen"/>
+    </fs>
+    <fs id="25">
+      <feat attr="CASE" val="gen"/>
+    </fs>
+  </macro>
+  <macro name="@gend-common">
+    <fs id="15">
+      <feat attr="GEND" val="gend-common"/>
+    </fs>
+    <fs id="9">
+      <feat attr="GEND" val="gend-common"/>
+    </fs>
+    <fs id="25">
+      <feat attr="GEND" val="gend-common"/>
+    </fs>
+  </macro>
+  <macro name="@imp">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Mood">
+          <prop name="imp"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@ind">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Mood">
+          <prop name="ind"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@inf">
+    <fs id="10">
+      <feat attr="VFORM" val="inf"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="inf"/>
+    </fs>
+  </macro>
+  <macro name="@ing">
+    <fs id="10">
+      <feat attr="VFORM" val="ing"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="ing"/>
+    </fs>
+  </macro>
+  <macro name="@int">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Mood">
+          <prop name="int"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@loc">
+    <fs id="15">
+      <feat attr="CASE" val="loc"/>
+    </fs>
+    <fs id="9">
+      <feat attr="CASE" val="loc"/>
+    </fs>
+    <fs id="25">
+      <feat attr="CASE" val="loc"/>
+    </fs>
+  </macro>
+  <macro name="@m-distal">
+    <lf>
+      <satop nomvar="M">
+        <diamond mode="Proximity">
+          <prop name="m-distal"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@m-proximal">
+    <lf>
+      <satop nomvar="M">
+        <diamond mode="Proximity">
+          <prop name="m-proximal"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@masc">
+    <fs id="15">
+      <feat attr="GEND" val="masc"/>
+    </fs>
+    <fs id="9">
+      <feat attr="GEND" val="masc"/>
+    </fs>
+    <fs id="25">
+      <feat attr="GEND" val="masc"/>
+    </fs>
+  </macro>
+  <macro name="@neg">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Polarity">
+          <prop name="neg"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@neut">
+    <fs id="15">
+      <feat attr="GEND" val="neut"/>
+    </fs>
+    <fs id="9">
+      <feat attr="GEND" val="neut"/>
+    </fs>
+    <fs id="25">
+      <feat attr="GEND" val="neut"/>
+    </fs>
+  </macro>
+  <macro name="@nf-ctxt">
+    <fs id="15">
+      <feat attr="NFORM" val="nf-ctxt"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NFORM" val="nf-ctxt"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NFORM" val="nf-ctxt"/>
+    </fs>
+  </macro>
+  <macro name="@nf-dummy">
+    <fs id="15">
+      <feat attr="NFORM" val="nf-dummy"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NFORM" val="nf-dummy"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NFORM" val="nf-dummy"/>
+    </fs>
+  </macro>
+  <macro name="@nf-real">
+    <fs id="15">
+      <feat attr="NFORM" val="nf-real"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NFORM" val="nf-real"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NFORM" val="nf-real"/>
+    </fs>
+  </macro>
+  <macro name="@no-degrees">
+    <lf>
+      <satop nomvar="M">
+        <diamond mode="Degree">
+          <prop name="no-degrees"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@nom">
+    <fs id="15">
+      <feat attr="CASE" val="nom"/>
+    </fs>
+    <fs id="9">
+      <feat attr="CASE" val="nom"/>
+    </fs>
+    <fs id="25">
+      <feat attr="CASE" val="nom"/>
+    </fs>
+  </macro>
+  <macro name="@non-3rd">
+    <fs id="15">
+      <feat attr="PERS" val="non-3rd"/>
+    </fs>
+    <fs id="9">
+      <feat attr="PERS" val="non-3rd"/>
+    </fs>
+    <fs id="10">
+      <feat attr="PERS" val="non-3rd"/>
+    </fs>
+    <fs id="11">
+      <feat attr="PERS" val="non-3rd"/>
+    </fs>
+  </macro>
+  <macro name="@passive">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Voice">
+          <prop name="passive"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@past">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Tense">
+          <prop name="past"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@perfect">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Aspect">
+          <prop name="perfect"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@pl">
+    <lf>
+      <satop nomvar="T">
+        <diamond mode="Num">
+          <prop name="pl"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@pos">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Polarity">
+          <prop name="pos"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@post-n">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="post-n"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="post-n"/>
+    </fs>
+  </macro>
+  <macro name="@post-s">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="post-s"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="post-s"/>
+    </fs>
+  </macro>
+  <macro name="@post-s-loose">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="post-s-loose"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="post-s-loose"/>
+    </fs>
+  </macro>
+  <macro name="@post-vp">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="post-vp"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="post-vp"/>
+    </fs>
+  </macro>
+  <macro name="@pp">
+    <fs id="10">
+      <feat attr="VFORM" val="pp"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="pp"/>
+    </fs>
+  </macro>
+  <macro name="@pre-cop-comp">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="pre-cop-comp"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="pre-cop-comp"/>
+    </fs>
+  </macro>
+  <macro name="@pre-n">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="pre-n"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="pre-n"/>
+    </fs>
+  </macro>
+  <macro name="@pre-s">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="pre-s"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="pre-s"/>
+    </fs>
+  </macro>
+  <macro name="@pre-vp">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="pre-vp"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="pre-vp"/>
+    </fs>
+  </macro>
+  <macro name="@prep-1">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="prep-1"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="prep-1"/>
+    </fs>
+  </macro>
+  <macro name="@prep-2">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="prep-2"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="prep-2"/>
+    </fs>
+  </macro>
+  <macro name="@prep-3">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="prep-3"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="prep-3"/>
+    </fs>
+  </macro>
+  <macro name="@prep-4">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="prep-4"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="prep-4"/>
+    </fs>
+  </macro>
+  <macro name="@prep-all">
+    <fs id="25">
+      <feat attr="CC-TYPE" val="prep-all"/>
+    </fs>
+    <fs id="15">
+      <feat attr="CC-TYPE" val="prep-all"/>
+    </fs>
+  </macro>
+  <macro name="@pres">
+    <lf>
+      <satop nomvar="E">
+        <diamond mode="Tense">
+          <prop name="pres"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@pro">
+    <fs id="15">
+      <feat attr="NFORM" val="pro"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NFORM" val="pro"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NFORM" val="pro"/>
+    </fs>
+  </macro>
+  <macro name="@s-comparative">
+    <fs id="25">
+      <feat attr="DEGREE" val="s-comparative"/>
+    </fs>
+  </macro>
+  <macro name="@s-degree-base">
+    <fs id="25">
+      <feat attr="DEGREE" val="s-degree-base"/>
+    </fs>
+  </macro>
+  <macro name="@s-degrees">
+    <fs id="25">
+      <feat attr="DEGREE" val="s-degrees"/>
+    </fs>
+  </macro>
+  <macro name="@s-dependent">
+    <fs id="10">
+      <feat attr="MOOD" val="s-dependent"/>
+    </fs>
+  </macro>
+  <macro name="@s-imp">
+    <fs id="10">
+      <feat attr="MOOD" val="s-imp"/>
+    </fs>
+  </macro>
+  <macro name="@s-ind">
+    <fs id="10">
+      <feat attr="MOOD" val="s-ind"/>
+    </fs>
+  </macro>
+  <macro name="@s-ind-ell">
+    <fs id="10">
+      <feat attr="MOOD" val="s-ind-ell"/>
+    </fs>
+  </macro>
+  <macro name="@s-int">
+    <fs id="10">
+      <feat attr="MOOD" val="s-int"/>
+    </fs>
+  </macro>
+  <macro name="@s-major">
+    <fs id="10">
+      <feat attr="MOOD" val="s-major"/>
+    </fs>
+  </macro>
+  <macro name="@s-mass">
+    <fs id="15">
+      <feat attr="NUM" val="s-mass"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NUM" val="s-mass"/>
+    </fs>
+    <fs id="10">
+      <feat attr="NUM" val="s-mass"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NUM" val="s-mass"/>
+    </fs>
+    <fs id="25">
+      <feat attr="NUM" val="s-mass"/>
+    </fs>
+    <fs id="42">
+      <feat attr="NUM" val="s-mass"/>
+    </fs>
+  </macro>
+  <macro name="@s-minor">
+    <fs id="10">
+      <feat attr="MOOD" val="s-minor"/>
+    </fs>
+  </macro>
+  <macro name="@s-mood-mixed">
+    <fs id="10">
+      <feat attr="MOOD" val="s-mood-mixed"/>
+    </fs>
+  </macro>
+  <macro name="@s-neg">
+    <fs id="10">
+      <feat attr="POL" val="s-neg"/>
+    </fs>
+    <fs id="11">
+      <feat attr="POL" val="s-neg"/>
+    </fs>
+  </macro>
+  <macro name="@s-no-degrees">
+    <fs id="25">
+      <feat attr="DEGREE" val="s-no-degrees"/>
+    </fs>
+  </macro>
+  <macro name="@s-pl">
+    <fs id="15">
+      <feat attr="NUM" val="s-pl"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NUM" val="s-pl"/>
+    </fs>
+    <fs id="10">
+      <feat attr="NUM" val="s-pl"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NUM" val="s-pl"/>
+    </fs>
+    <fs id="25">
+      <feat attr="NUM" val="s-pl"/>
+    </fs>
+    <fs id="42">
+      <feat attr="NUM" val="s-pl"/>
+    </fs>
+  </macro>
+  <macro name="@s-pl-sp">
+    <fs id="15">
+      <feat attr="NUM" val="s-pl-sp"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NUM" val="s-pl-sp"/>
+    </fs>
+    <fs id="10">
+      <feat attr="NUM" val="s-pl-sp"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NUM" val="s-pl-sp"/>
+    </fs>
+    <fs id="25">
+      <feat attr="NUM" val="s-pl-sp"/>
+    </fs>
+    <fs id="42">
+      <feat attr="NUM" val="s-pl-sp"/>
+    </fs>
+  </macro>
+  <macro name="@s-pl-unsp">
+    <fs id="15">
+      <feat attr="NUM" val="s-pl-unsp"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NUM" val="s-pl-unsp"/>
+    </fs>
+    <fs id="10">
+      <feat attr="NUM" val="s-pl-unsp"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NUM" val="s-pl-unsp"/>
+    </fs>
+    <fs id="25">
+      <feat attr="NUM" val="s-pl-unsp"/>
+    </fs>
+    <fs id="42">
+      <feat attr="NUM" val="s-pl-unsp"/>
+    </fs>
+  </macro>
+  <macro name="@s-pos">
+    <fs id="10">
+      <feat attr="POL" val="s-pos"/>
+    </fs>
+    <fs id="11">
+      <feat attr="POL" val="s-pos"/>
+    </fs>
+  </macro>
+  <macro name="@s-prov-pos">
+    <fs id="10">
+      <feat attr="POL" val="s-prov-pos"/>
+    </fs>
+    <fs id="11">
+      <feat attr="POL" val="s-prov-pos"/>
+    </fs>
+  </macro>
+  <macro name="@s-sg">
+    <fs id="15">
+      <feat attr="NUM" val="s-sg"/>
+    </fs>
+    <fs id="9">
+      <feat attr="NUM" val="s-sg"/>
+    </fs>
+    <fs id="10">
+      <feat attr="NUM" val="s-sg"/>
+    </fs>
+    <fs id="11">
+      <feat attr="NUM" val="s-sg"/>
+    </fs>
+    <fs id="25">
+      <feat attr="NUM" val="s-sg"/>
+    </fs>
+    <fs id="42">
+      <feat attr="NUM" val="s-sg"/>
+    </fs>
+  </macro>
+  <macro name="@s-superlative">
+    <fs id="25">
+      <feat attr="DEGREE" val="s-superlative"/>
+    </fs>
+  </macro>
+  <macro name="@sg">
+    <lf>
+      <satop nomvar="T">
+        <diamond mode="Num">
+          <prop name="sg"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@superlative">
+    <lf>
+      <satop nomvar="M">
+        <diamond mode="Degree">
+          <prop name="superlative"/>
+        </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@vf-base">
+    <fs id="10">
+      <feat attr="VFORM" val="vf-base"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="vf-base"/>
+    </fs>
+  </macro>
+  <macro name="@vf-be">
+    <fs id="10">
+      <feat attr="VFORM" val="vf-be"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="vf-be"/>
+    </fs>
+  </macro>
+  <macro name="@vf-to-imp">
+    <fs id="10">
+      <feat attr="VFORM" val="vf-to-imp"/>
+    </fs>
+    <fs id="11">
+      <feat attr="VFORM" val="vf-to-imp"/>
+    </fs>
+  </macro>
+  <macro name="@x-location">
+    <fs id="25">
+      <feat attr="MOD-TYPE" val="x-location"/>
+    </fs>
+  </macro>
+</morph>

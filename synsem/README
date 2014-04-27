@@ -1,0 +1,11 @@
+hlmc: http://www.luigidragone.com/software/hybrid-logics-model-checker/
+spartacus: http://www.ps.uni-saarland.de/spartacus/
+
+
+When generating OpenCCG parse trees in TeX, add the following to the .tex file header
+to correctly display Russian characters.
+
+ \usepackage{cmap}
+ \usepackage[T2A]{fontenc}
+ \usepackage[utf8]{inputenc}
+ \usepackage[english, russian]{babel}

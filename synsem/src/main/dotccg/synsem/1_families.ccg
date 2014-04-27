@@ -1,0 +1,117 @@
+##### VERB #####
+
+
+family iv(V) {
+    entry : s<10> [E NUM:NUM PERS:PERS MOOD:MOOD POL:POL VFORM:VFORM s-minor] \! np<9> [S nom NUM:NUM PERS:PERS nf-real]
+          : E:event(* <Actor>(S:entity));
+}
+
+rule {
+    typechange:   s<10> [E NUM:NUM PERS:PERS MOOD:MOOD POL:POL VFORM:VFORM vf-to-imp] \! np<9> [S nom NUM:NUM PERS:PERS nf-real]
+              =>  s<~10>[E fin-full s-imp] : E:event(<Mood>(imp) <Subject>(S:entity addressee));
+}
+
+family tv(V) {
+    entry : s<10> [E NUM:NUM PERS:PERS MOOD:MOOD POL:POL VFORM:VFORM s-minor] \! np<9> [S nom NUM:NUM PERS:PERS nf-real] / np<2>[X acc]
+          : E:event(* <Actor>(S:entity) <Patient>(X:entity));
+}
+
+rule {
+    typechange:  s<10> [E NUM:NUM PERS:PERS MOOD:MOOD POL:POL VFORM:VFORM vf-to-imp] \! np<9> [S nom NUM:NUM PERS:PERS nf-real] / np<2>[X acc]
+              => s<~10>[E fin-full s-imp] / np<2>[X acc] : E:event(<Mood>(imp) <Subject>(S:entity addressee));
+}
+
+
+
+##### NOUN #####
+
+
+family Noun {
+    entry: n<15>[T CASE NUM PERS GEND NFORM] : T:entity(*) ;
+}
+
+rule { typechange: n<15>[T CASE s-sg PERS GEND NFORM] => np<~15>[T CASE s-pl PERS GEND NFORM] : T:entity(<Num>(sg)); }
+rule { typechange: n<15>[T CASE s-pl PERS GEND NFORM] => np<~15>[T CASE s-pl PERS GEND NFORM] : T:entity(<Num>(pl)); }
+rule { typechange: n<15>[T loc  s-sg PERS GEND NFORM] => np<~15>[T loc  s-sg PERS GEND NFORM] : T:entity(<Num>(sg)); }  # Type raising for "кухне" to combine with "на" in "на кухне"
+
+# ждем справа существительное в род. п. в определительном значении (генитивная конструкция) - # подсветка (полок)
+# может вкладываться - подсветка ламп полок комнаты
+# тильда (~) означает, что в сем. представлении будет заведена новая реф. переменная (?)
+rule {
+    typechange: n<15>[T CASE:CASE NUM:NUM PERS:PERS GEND:GEND NFORM:NFORM]$1 =>
+                n<15>[T]$1 / n<~15>[M CASE:gen NUM PERS GEND NFORM] :
+                T:entity(<Modifier>(M));
+}
+
+
+##### PREPOSITION ####
+
+
+# case - падежное управление
+family Prep {
+    entry: pp<25>[M MOD-TYPE CC-TYPE CASE] : M:modifier(*);
+}
+
+rule { typechange: pp<25>[M MOD-TYPE CC-TYPE CASE]$1 => pp<25>[M MOD-TYPE CC-TYPE CASE]$1 /^ np<30>[A CASE] : M:modifier(<Anchor>(A:physical)) ; }
+
+# All preps which can modify nouns, post-modify them ('the ball on the table', not 'the on the table ball')
+rule { typechange: pp<25>[M MOD-TYPE CC-TYPE post-n2]$1 => n<~15>[T]$1 \* n<15>[T CASE NUM PERS GEND NFORM] : T:entity(<Modifier>(M)); }
+
+
+    ##### ADJECTIVE #####
+
+    family Adj  {
+        entry: adj<25>[M DEGREE CASE NUM GEND] : M(*);
+    }
+
+    # The following rule converts the 'base-generated' atomic cat versions of adjectives into
+    # their complex-cat form (i.e. the form that actually attach to and modify nouns)
+    rule { typechange: adj<25>[M DEGREE CASE NUM GEND pre-n]  =>  n<~15>[T CASE NUM GEND] / n<15>[T CASE NUM PERS GEND NFORM] : T:entity(<Modifier>(M)); }
+
+
+    ## Nominal coordination ##
+
+    family Coord-np- {
+        entry:  n<15> [T CASE NUM PERS NFORM COM=yes] / np[N CASE]  \* np[F CASE COM=no]   : T(* <First>(F) ^ <Next>(N));
+    }
+
+    family Coord-adj- {
+        entry:  adj[R COM=yes] / adj[N] \* adj[F COM=no] : R(* <First>(F) ^ <Next>(N));
+    }
+
+    ## VP & sentential Coordination ##
+
+    # First entry handles coordinated vps, i.e. subject controlled vp chains.
+    # Every syn feature except for modifier class must be identical. If this weren't allowed to differ,
+    # couldn't handle I walked in and picked it up, cuz walk and pick have dif m-classes.
+
+    def coord-s-entry(res, next, first) {
+        entry:  s<10>[R res fin COM=yes] /^ s<11>[N next fin] \* s<12>[F first fin COM=no] : R(* <First>(F) ^ <Next>(N)) ;
+    }
+
+    # Second entry handles general sentence coordination. The conjuncts must be mooded-clauses,
+    # the result is of general s-major mood and 'fin' verb form (if you don't give it a verb form
+    # then some rules will grap a hold of it and make silly readings (e.g. see rules around imperatives)
+    # NOTE: May 15 restricted these to being ind or int, not dropped subject ind (s-ind-ell) or imp.
+    #       This is because we want those to be handled using the vp-chains. This reduces number of parses
+    #       and looks more sexy, like Givon's(1995)   S[subj vp vp vp vp vp ...] treatment
+    # NOTE: COM = yes or no    -> used in coordination constructions to block spurious readings
+
+    family Coord-s-  {
+        entry:  (s<10>[R VFORM:VFORM POL:POL NUM:NUM PERS:PERS COM=yes] \! np<9>[S nom NUM:NUM PERS:PERS]) / (s<11>[N VFORM:VFORM POL:POL NUM:NUM PERS:PERS        ] \! np<9>[S nom NUM:NUM PERS:PERS]) \ (s<12>[F VFORM:VFORM POL:POL NUM:NUM PERS:PERS COM=no ] \! np<9>[S nom NUM:NUM PERS:PERS])
+                : R(* <First>(F) ^ <Next>(N));
+        coord-s-entry(s-ind, s-ind, s-ind)
+        coord-s-entry(s-int, s-int, s-int)
+        coord-s-entry(s-dependent, s-dependent, s-dependent)
+        coord-s-entry(s-mood-mixed, s-ind, s-int)
+        coord-s-entry(s-mood-mixed, s-int, s-ind)
+        coord-s-entry(s-mood-mixed, s-int, s-imp)
+        coord-s-entry(s-mood-mixed, s-ind, s-imp)
+        coord-s-entry(s-ind, s-ind, s-ind)
+    }
+
+    # Thise rule turns verbs wanting subjects into imperatives
+    rule { typechange:
+        s<10> [E NUM:NUM PERS:PERS MCLASS:MCLASS MOOD:MOOD POL:POL VFORM:VFORM vf-to-imp] \! np<9> [S nom NUM:NUM PERS:PERS nf-real] / (s<11>[N VFORM:VFORM POL:POL NUM:NUM PERS:PERS] \! np<9> [S nom NUM:NUM PERS:PERS] )
+     => s<~10>[E fin-full s-imp] / (s<11>[N VFORM:VFORM POL:POL NUM:NUM PERS:PERS] \! np<9> [S nom NUM:NUM PERS:PERS] ) : E:event(<Mood>(imp) <Subject>(S:entity addressee));
+    }

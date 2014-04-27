@@ -1,0 +1,5 @@
+B x (
+	<author>(franceschet)
+	&
+	A (<author>(franceschet) -> x)
+)

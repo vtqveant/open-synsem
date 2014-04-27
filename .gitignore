@@ -1,0 +1,37 @@
+## IntelliJ IDEA
+.idea/
+*.ipr
+*.iws
+*.iml
+
+## Java
+*.class
+
+*.jar
+*.war
+*.ear
+
+## tmp
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+## Maven
+target/
+
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+
+## Intermediate documents:
+*.dvi

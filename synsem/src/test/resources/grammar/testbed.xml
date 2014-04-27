@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regression name="synsem.ccg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../testbed.xsd">
+  <item string="лампа" numOfParses="2"/>
+  <item string="лампы" numOfParses="5"/>
+  <item string="включи лампу" numOfParses="1"/>
+  <item string="включи лампы" numOfParses="1"/>
+  <item string="включи лампу на кухне"/>
+  <item string="включи лампу и подсветку" numOfParses="1"/>
+  <item string="включи лампу и подсветку на кухне" numOfParses="2"/>
+  <item string="включи лампу на кухне и подсветку" numOfParses="1"/>
+  <item string="красная лампа" numOfParses="1"/>
+  <item string="включи красную лампу в прихожей и подсветку на кухне" numOfParses="4"/>
+  <item string="включи красную лампу и выключи лампу и подсветку на кухне" numOfParses="6"/>
+  <item string="выключи красную и синюю лампы" numOfParses="3"/>
+</regression>

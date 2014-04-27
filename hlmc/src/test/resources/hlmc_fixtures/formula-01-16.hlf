@@ -1,0 +1,15 @@
+@ root (
+	<biblio>(
+		<paper>(
+			B x (
+				@ root (
+					<biblio>(
+						<paper>(
+							! x
+						)
+					)
+				)   
+			)
+		)
+	)
+)

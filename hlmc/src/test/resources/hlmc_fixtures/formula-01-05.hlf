@@ -1,0 +1,15 @@
+@root(
+	<biblio>(
+		<book>(
+			B x (
+				A (
+					B y (
+						(@ y (<book>-(T)) & ! x) 
+						->
+						@ x (<cites>(y))
+					)
+				)	
+			)
+		)
+	)
+)

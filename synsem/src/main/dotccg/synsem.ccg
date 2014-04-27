@@ -1,0 +1,676 @@
+
+ 
+ 
+ ################################################################ 
+# I AM A GENERATED FILE (by merge-ccg.pl)                      #  
+# DO NOT EDIT ME DIRECTLY !!!                                  #
+# INSTEAD, EDIT THE SOURCE .CCG FILES IN ./ccg-files FOLDER    #
+################################################################ 
+ 
+ #############################################################
+#                                                           #
+#                    synsem.ccg                             #
+#                                                           #
+#############################################################
+
+# adopted from MOLOKO grammar (CoSy project, DFKI Labs/Saarbrucken Univ.)
+
+#
+# TODO
+#
+#  - морфология для прилагательных в moloko (точнее, в англ. языке) отсутствует как таковая, соотв. куча ошибочных разборов
+#  - налабать визуализатор для HLDS в виде AVM
+#  - coord(and, adv, modifier)            # (внезапно и громко) + VP
+#  - запилить "синий" и т.п. (макросы для правильных окончаний)
+#
+#
+
+
+############### Features #################
+
+##
+## ONTOLOGICAL FEATURES
+##
+
+feature {
+    ont-event: event { action };
+
+    ont-entity: entity {
+                     physical{
+                              animate{person},
+                              thing,
+                              e-location{e-region e-place}
+  		             }
+  		    };
+
+    ont-quality: quality {
+                     q-physical {
+                         q-size
+                         q-shape
+                         q-age
+                         q-color
+                         q-state
+                         q-material
+                     }
+                     q-position{
+                         q-location
+                         q-number {
+                             number-cardinal
+                             number-ordinal
+                             number-id
+                         }
+                         q-temporal
+                         q-discourse
+                     }
+                     q-attitude
+                 };
+
+    ont-modifier: modifier {
+                      m-location
+                      m-probability
+                      m-frequency     # sometimes, often, usually
+                      m-comment       # quite generic 'affect'
+                      m-serial		   # go get that
+                      m-accompaniment # with GJ...
+                      m-instrumental  # with the ball...
+                      m-benefactor    # for ...
+                      m-relational {
+                          m-cause
+                          m-result
+                          m-condition
+                      }
+                      m-purpose       # I went there 'to get it'
+        		      m-intensity
+  	        	      m-comparison
+  		              m-restriction   # ball that I picked up, place where I saw you
+  		              m-attributive   # ход ноги
+                  };
+
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # IMPORTANT:
+  #            'modifier' is used in the grammar.
+  #
+  #            Moreover, any changes to this will require changes in these files:
+  #                  types-classes.ccg, prep.ccg, adv.ccg and (perhaps) verb.ccg
+  #            See these files for specifics.
+  #
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+}
+
+
+##
+## SYNTACTIC FEATURES
+##
+
+# 15 is the feature id for nouns
+# 9 is the feature id for the syntatic subject position
+# 10 is the feature id for sentences
+# 11 is the feature id for finites when 'selected' for by interrogative utterance templates
+#       the finite determines subj agreement and pol, vform & fin.
+# 25 is for adjectives
+# 42 is used for the np compliment in 'I am a man', used to block ' these are a ball'
+
+feature {
+
+  ## Noun features ##
+  NUM<15, 9, 10, 11, 25, 42>:  s-sg s-pl { s-pl-sp s-pl-unsp } s-mass ;  # specific plural (as in 3 balls) or unspecific (balls)
+  PERS<15, 9, 10, 11>: non-3rd {1st 2nd} 3rd;
+  GEND<15, 9, 25>: gend-common { masc fem neut };
+  CASE<15, 9, 25>: nom gen dat acc abl loc;
+  NFORM<15, 9, 11>: nf-real { full pro nf-ctxt } nf-dummy { dummy-there };  # full form vs pronoun vs none (as in 'I will take the green')
+
+  ## Sentence/Verbal Features ##
+  MOOD<10>:   s-major { s-ind s-imp s-int s-ind-ell s-mood-mixed } s-minor s-dependent;
+  POL<10,11>: s-pos s-prov-pos s-neg;
+
+  # vf-be (am able to)  for-ing (thanks for helping me), fin-ctxt (I did), fin-deictic (I said that) , fin-full (all other finite events)
+  # Need two layers b/c any thing which wants a finite-s can take a deictic (I said that, before that, etc.) BUT must the ind-building rule
+  # only wants fin-ctxt or full
+  #
+  # Aug 20 added ell-subj as vform... may be useful. Should eventually take out of s-mood, me thinks.
+  VFORM<10,11>: fin { fin-clause { fin-ctxt fin-ell fin-full } fin-deictic } vf-base vf-to-imp inf ing pp vf-be for-ing;
+
+  ## Adj/Adv Features ##
+  DEGREE<25>: s-no-degrees s-degrees { s-degree-base s-comparative s-superlative };
+
+} # end feature
+
+
+
+
+## SEMANTIC FEATURES #
+
+# Note: currently a 'redundancy' for proximity. Can't re-use feature-value names
+#       so must have, e.g., distal, e-distal and m-distal corresponding to
+#       THAT ball, who said THAT, OVER on the table (or THERE)
+#
+# NOTE: This could be resolved by changing all the relevant cats to having same
+#       Index, e.g. preps and deictic events could receive, respectively:
+#                  pp[T] / np[A]  :  T:modifier( * <Anchor>A:entity )
+#                  s[T]            : T:event(context)
+#       in other words, enforcing the index variables chosen is not at all important
+
+feature {
+
+  ## ENTITY ##
+  NUMBER<T:Num>: sg pl;
+
+  ## EVENT ##
+  POLARITY<E:Polarity>: pos neg;
+  MOOD<E:Mood>: ind imp int;
+  TENSE<E:Tense>: past pres fut;
+  ASPECT<E:Aspect>: continuous perfect;
+  VOICE<E:Voice>: active passive;
+  E-PROXIMITY<E:Proximity>: e-distal e-proximal;
+
+  ## MOD ##
+  DEGREE<M:Degree>: no-degrees degrees { degree-base comparative superlative };
+  M-PROXIMITY<M:Proximity>: m-distal m-proximal;
+
+} # end feature
+
+
+## Modifier restrictions
+feature {
+
+  MOD-TYPE<25>:  x-location;
+
+#############################
+## Combinatorial Behaviour ##
+#############################
+
+  # These are the features which determine the syntactic behaviour of modifiers (where they can be).
+  # Each modifer POS (adv, pp) has a rule for each of these saying,
+  # e.g, 'if you are allowed to pre-modify sentences, then I'll turn you into a pre-modifier '
+
+  # Each modifier lexically (in the dictionary) chooses its syntactic 'class'
+
+  CC-TYPE<25, 15>: post-s post-s-loose pre-s pre-vp post-vp
+                   pre-cop-comp   # I am ALSO big,  it is CERTAINLY not a ball
+                   post-n pre-n
+         	       cc-none
+
+  ## Prepositions Classes ## (NEW CAN EASILY BE MODIFIED/EXTENDED)
+  prep-all [post-n post-s post-vp pre-s]
+  prep-1   [post-n post-s post-vp      ]
+  prep-2   [       post-s post-vp      ]
+  prep-3   [post-n                     ]
+  prep-4   [       post-s post-vp pre-s]
+
+  # Note: adverb and nominal classes were removed for readability, s. Moloko
+
+  ;
+} # end feature
+
+
+##### VERB #####
+
+
+family iv(V) {
+    entry : s<10> [E NUM:NUM PERS:PERS MOOD:MOOD POL:POL VFORM:VFORM s-minor] \! np<9> [S nom NUM:NUM PERS:PERS nf-real]
+          : E:event(* <Actor>(S:entity));
+}
+
+rule {
+    typechange:   s<10> [E NUM:NUM PERS:PERS MOOD:MOOD POL:POL VFORM:VFORM vf-to-imp] \! np<9> [S nom NUM:NUM PERS:PERS nf-real]
+              =>  s<~10>[E fin-full s-imp] : E:event(<Mood>(imp) <Subject>(S:entity addressee));
+}
+
+family tv(V) {
+    entry : s<10> [E NUM:NUM PERS:PERS MOOD:MOOD POL:POL VFORM:VFORM s-minor] \! np<9> [S nom NUM:NUM PERS:PERS nf-real] / np<2>[X acc]
+          : E:event(* <Actor>(S:entity) <Patient>(X:entity));
+}
+
+rule {
+    typechange:  s<10> [E NUM:NUM PERS:PERS MOOD:MOOD POL:POL VFORM:VFORM vf-to-imp] \! np<9> [S nom NUM:NUM PERS:PERS nf-real] / np<2>[X acc]
+              => s<~10>[E fin-full s-imp] / np<2>[X acc] : E:event(<Mood>(imp) <Subject>(S:entity addressee));
+}
+
+
+
+##### NOUN #####
+
+
+family Noun {
+    entry: n<15>[T CASE NUM PERS GEND NFORM] : T:entity(*) ;
+}
+
+rule { typechange: n<15>[T CASE s-sg PERS GEND NFORM] => np<~15>[T CASE s-pl PERS GEND NFORM] : T:entity(<Num>(sg)); }
+rule { typechange: n<15>[T CASE s-pl PERS GEND NFORM] => np<~15>[T CASE s-pl PERS GEND NFORM] : T:entity(<Num>(pl)); }
+rule { typechange: n<15>[T loc  s-sg PERS GEND NFORM] => np<~15>[T loc  s-sg PERS GEND NFORM] : T:entity(<Num>(sg)); }  # Type raising for "кухне" to combine with "на" in "на кухне"
+
+# ждем справа существительное в род. п. в определительном значении (генитивная конструкция) - # подсветка (полок)
+# может вкладываться - подсветка ламп полок комнаты
+# тильда (~) означает, что в сем. представлении будет заведена новая реф. переменная (?)
+rule {
+    typechange: n<15>[T CASE:CASE NUM:NUM PERS:PERS GEND:GEND NFORM:NFORM]$1 =>
+                n<15>[T]$1 / n<~15>[M CASE:gen NUM PERS GEND NFORM] :
+                T:entity(<Modifier>(M));
+}
+
+
+##### PREPOSITION ####
+
+
+# case - падежное управление
+family Prep {
+    entry: pp<25>[M MOD-TYPE CC-TYPE CASE] : M:modifier(*);
+}
+
+rule { typechange: pp<25>[M MOD-TYPE CC-TYPE CASE]$1 => pp<25>[M MOD-TYPE CC-TYPE CASE]$1 /^ np<30>[A CASE] : M:modifier(<Anchor>(A:physical)) ; }
+
+# All preps which can modify nouns, post-modify them ('the ball on the table', not 'the on the table ball')
+rule { typechange: pp<25>[M MOD-TYPE CC-TYPE post-n2]$1 => n<~15>[T]$1 \* n<15>[T CASE NUM PERS GEND NFORM] : T:entity(<Modifier>(M)); }
+
+
+    ##### ADJECTIVE #####
+
+    family Adj  {
+        entry: adj<25>[M DEGREE CASE NUM GEND] : M(*);
+    }
+
+    # The following rule converts the 'base-generated' atomic cat versions of adjectives into
+    # their complex-cat form (i.e. the form that actually attach to and modify nouns)
+    rule { typechange: adj<25>[M DEGREE CASE NUM GEND pre-n]  =>  n<~15>[T CASE NUM GEND] / n<15>[T CASE NUM PERS GEND NFORM] : T:entity(<Modifier>(M)); }
+
+
+    ## Nominal coordination ##
+
+    family Coord-np- {
+        entry:  n<15> [T CASE NUM PERS NFORM COM=yes] / np[N CASE]  \* np[F CASE COM=no]   : T(* <First>(F) ^ <Next>(N));
+    }
+
+    family Coord-adj- {
+        entry:  adj[R COM=yes] / adj[N] \* adj[F COM=no] : R(* <First>(F) ^ <Next>(N));
+    }
+
+    ## VP & sentential Coordination ##
+
+    # First entry handles coordinated vps, i.e. subject controlled vp chains.
+    # Every syn feature except for modifier class must be identical. If this weren't allowed to differ,
+    # couldn't handle I walked in and picked it up, cuz walk and pick have dif m-classes.
+
+    def coord-s-entry(res, next, first) {
+        entry:  s<10>[R res fin COM=yes] /^ s<11>[N next fin] \* s<12>[F first fin COM=no] : R(* <First>(F) ^ <Next>(N)) ;
+    }
+
+    # Second entry handles general sentence coordination. The conjuncts must be mooded-clauses,
+    # the result is of general s-major mood and 'fin' verb form (if you don't give it a verb form
+    # then some rules will grap a hold of it and make silly readings (e.g. see rules around imperatives)
+    # NOTE: May 15 restricted these to being ind or int, not dropped subject ind (s-ind-ell) or imp.
+    #       This is because we want those to be handled using the vp-chains. This reduces number of parses
+    #       and looks more sexy, like Givon's(1995)   S[subj vp vp vp vp vp ...] treatment
+    # NOTE: COM = yes or no    -> used in coordination constructions to block spurious readings
+
+    family Coord-s-  {
+        entry:  (s<10>[R VFORM:VFORM POL:POL NUM:NUM PERS:PERS COM=yes] \! np<9>[S nom NUM:NUM PERS:PERS]) / (s<11>[N VFORM:VFORM POL:POL NUM:NUM PERS:PERS        ] \! np<9>[S nom NUM:NUM PERS:PERS]) \ (s<12>[F VFORM:VFORM POL:POL NUM:NUM PERS:PERS COM=no ] \! np<9>[S nom NUM:NUM PERS:PERS])
+                : R(* <First>(F) ^ <Next>(N));
+        coord-s-entry(s-ind, s-ind, s-ind)
+        coord-s-entry(s-int, s-int, s-int)
+        coord-s-entry(s-dependent, s-dependent, s-dependent)
+        coord-s-entry(s-mood-mixed, s-ind, s-int)
+        coord-s-entry(s-mood-mixed, s-int, s-ind)
+        coord-s-entry(s-mood-mixed, s-int, s-imp)
+        coord-s-entry(s-mood-mixed, s-ind, s-imp)
+        coord-s-entry(s-ind, s-ind, s-ind)
+    }
+
+    # Thise rule turns verbs wanting subjects into imperatives
+    rule { typechange:
+        s<10> [E NUM:NUM PERS:PERS MCLASS:MCLASS MOOD:MOOD POL:POL VFORM:VFORM vf-to-imp] \! np<9> [S nom NUM:NUM PERS:PERS nf-real] / (s<11>[N VFORM:VFORM POL:POL NUM:NUM PERS:PERS] \! np<9> [S nom NUM:NUM PERS:PERS] )
+     => s<~10>[E fin-full s-imp] / (s<11>[N VFORM:VFORM POL:POL NUM:NUM PERS:PERS] \! np<9> [S nom NUM:NUM PERS:PERS] ) : E:event(<Mood>(imp) <Subject>(S:entity addressee));
+    }
+
+# TODO
+# наверху сверху внизу снизу
+# весь всё
+
+
+
+
+############ VERB ############
+
+  # imperative rule will be applied to a form marked with "vf-to-imp"
+  word включать:tv(action, pred=ON) {
+      включи: imp vf-to-imp;
+      включить: imp vf-to-imp;
+  }
+
+  word выключать:tv(action, pred=OFF) {
+      выключи: imp vf-to-imp;
+      выключить: imp vf-to-imp;
+  }
+
+  word открывать:tv(action, pred=OPEN) {
+      открой: imp vf-to-imp;
+      открыть: imp vf-to-imp;
+  }
+
+  word закрывать:tv(action, pred=CLOSE) {
+      закрой: imp vf-to-imp;
+      закрыть: imp vf-to-imp;
+  }
+
+
+############ NOUN ############
+
+word диван:Noun(thing, pred=диван) {
+    диван: s-sg nom masc;
+    дивана: s-sg gen masc;
+    диван: s-sg acc masc;
+    диваном: s-sg abl masc;
+    диване: s-sg loc masc;
+
+    диваны: s-pl nom masc;
+    диванов: s-pl gen masc;
+    диваны: s-pl acc masc;
+    диванами: s-pl abl masc;
+    диванах: s-pl loc masc;
+}
+
+word зеркало:Noun(thing, pred=зеркало) {
+    зеркало:  s-sg nom neut;
+    зеркала:  s-sg gen neut;
+    зеркало:  s-sg acc neut;
+
+    зеркала:  s-pl nom neut;
+    зеркал:  s-pl gen neut;
+    зеркала:  s-pl acc neut;
+}
+
+word кровать:Noun(thing, pred=кровать) {
+    кровать:  s-sg nom fem;
+    кровати:  s-sg gen fem;
+    кровать:  s-sg acc fem;
+
+    кровати:  s-pl nom fem;
+    кроватей:  s-pl gen fem;
+    кровати:  s-pl acc fem;
+}
+
+  word свет:Noun(thing, pred=свет) {
+      свет:   s-sg nom masc;
+      света:  s-sg gen masc;
+      свет:   s-sg acc masc;
+  }
+
+  word лампа:Noun(thing, pred=лампа) {
+      лампа:  s-sg nom fem;
+      лампы:  s-sg gen fem;
+      лампу:  s-sg acc fem;
+
+      лампы:  s-pl nom fem;
+      ламп:   s-pl gen fem;
+      лампы:  s-pl acc fem;
+  }
+
+  word лампочка:Noun(thing, pred=лампочка) {
+      лампочка: s-sg nom fem;
+      лампочек: s-sg gen fem;
+      лампочку: s-sg acc fem;
+
+      лампочки: s-pl nom fem;
+      лампочек: s-pl gen fem;
+      лампочки: s-pl acc fem;
+  }
+
+  word стол:Noun(e-location, pred=стол) {
+      стол: s-sg nom masc;
+      стола: s-sg gen masc;
+      столу: s-sg dat masc;
+      стол: s-sg acc masc;
+      столом: s-sg abl masc;
+      столе: s-sg loc masc;
+  }
+
+  word кухня:Noun(e-place, pred=кухня) {
+      кухня: s-sg nom fem;
+      кухни: s-sg gen fem;
+      кухне: s-sg loc fem;
+  }
+
+  word прихожая:Noun(e-place, pred=прихожая) {
+      прихожая: s-sg nom fem;
+      прихожей: s-sg gen fem;
+      прихожей: s-sg abl fem;
+  }
+
+
+############ ADJECTIVE ############
+
+
+###
+### Склонение прилагательных
+###
+### А вообще, лучше всего экспортировать из AOT и конвертнуть в наш формат автоматически. А это так, баловство...
+###
+
+# Прилаг. склоняются по родам, числам и падежам.
+# Различают два склонения прилагательных: адъективное (твердая и мягкая разновидности) и смешанное.
+
+
+# Адъективное склонение, твердая разновидность
+
+def adj-adj-h-sg-fem(base) {
+        # sg, fem
+        base."ая" : nom s-sg s-degree-base fem  pre-n;
+        base."ой" : gen s-sg s-degree-base fem  pre-n;
+        base."ой" : dat s-sg s-degree-base fem  pre-n;
+        base."ую" : acc s-sg s-degree-base fem  pre-n;
+        base."ой" : abl s-sg s-degree-base fem  pre-n;
+        base."ой" : loc s-sg s-degree-base fem  pre-n;
+}
+
+def adj-adj-h-sg-neut(base) {
+        # sg, neut
+        base."ое" : nom s-sg s-degree-base neut pre-n;
+        base."ого": gen s-sg s-degree-base neut pre-n;
+        base."ому" : dat s-sg s-degree-base neut pre-n;
+        base."ое" : acc s-sg s-degree-base neut pre-n;
+        base."ым" : abl s-sg s-degree-base neut pre-n;
+        base."ом" : loc s-sg s-degree-base neut pre-n;
+}
+
+def adj-adj-h-pl(base) {
+        # pl
+        base."ые" : nom s-pl s-degree-base pre-n;
+        base."ых" : gen s-pl s-degree-base pre-n;
+        base."ым" : dat s-pl s-degree-base pre-n;
+        base."ые" : acc s-pl s-degree-base pre-n;
+        base."ыми": abl s-pl s-degree-base pre-n;
+        base."ых" : loc s-pl s-degree-base pre-n;
+}
+
+# адъективное склонение, твердая разновидность для основ на твердую согласную (напр., белый)
+def adj-adj-h-hardend(base, attr, pred) {
+    # бел-ый
+    word base."ый".-adj:Adj(attr, pred=pred) {
+        # sg, masc
+        base."ый" : nom s-sg s-degree-base masc pre-n;
+        base."ого": gen s-sg s-degree-base masc pre-n;
+        base."ому": dat s-sg s-degree-base masc pre-n;
+
+        # two forms for acc
+        base."ый" : acc s-sg s-degree-base masc pre-n;
+        base."ого" : acc s-sg s-degree-base masc pre-n;
+
+        base."ым" : abl s-sg s-degree-base masc pre-n;
+        base."ом" : loc s-sg s-degree-base masc pre-n;
+
+        adj-adj-h-sg-fem(base)
+        adj-adj-h-sg-neut(base)
+        adj-adj-h-pl(base)
+    }
+}
+
+# адъективное склонение, твердая разновидность для основ на мягкую согласную (напр., дикий)   # TODO дикие - некорректно! (возможно, можно регуляркой потом пофиксить)
+def adj-adj-h-softend(base, attr, pred) {
+    # бел-ый
+    word base."ий".-adj:Adj(attr, pred=pred) {
+        # sg, masc
+        base."ий" : nom s-sg s-degree-base masc pre-n;
+        base."ого": gen s-sg s-degree-base masc pre-n;
+        base."ому": dat s-sg s-degree-base masc pre-n;
+
+        # two forms for acc
+        base."ий" : acc s-sg s-degree-base masc pre-n;
+        base."ого" : acc s-sg s-degree-base masc pre-n;
+
+        base."им" : abl s-sg s-degree-base masc pre-n;
+        base."ом" : loc s-sg s-degree-base masc pre-n;
+
+        adj-adj-h-sg-fem(base)
+        adj-adj-h-sg-neut(base)
+        adj-adj-h-pl(base)
+    }
+}
+
+# адъективное склонение, твердая разновидность для основ на шипящую согласную (напр., сухой)    # TODO сухие - некорректно! (возможно, можно регуляркой потом пофиксить)
+def adj-adj-h-afend(base, attr, pred) {
+    # бел-ый
+    word base."ой".-adj:Adj(attr, pred=pred) {
+        # sg, masc
+        base."ой" : nom s-sg s-degree-base masc pre-n;
+        base."ого": gen s-sg s-degree-base masc pre-n;
+        base."ому": dat s-sg s-degree-base masc pre-n;
+
+        # two forms for acc
+        base."ой" : acc s-sg s-degree-base masc pre-n;
+        base."ого" : acc s-sg s-degree-base masc pre-n;
+
+        base."им" : abl s-sg s-degree-base masc pre-n;
+        base."ом" : loc s-sg s-degree-base masc pre-n;
+
+        adj-adj-h-sg-fem(base)
+        adj-adj-h-sg-neut(base)
+        adj-adj-h-pl(base)
+    }
+}
+
+# напр., боковой
+def adj-adj-h-afend-2(base, attr, pred) {
+    # бел-ый
+    word base."ой".-adj:Adj(attr, pred=pred) {
+        # sg, masc
+        base."ой" : nom s-sg s-degree-base masc pre-n;
+        base."ого": gen s-sg s-degree-base masc pre-n;
+        base."ому": dat s-sg s-degree-base masc pre-n;
+
+        # two forms for acc
+        base."ой" : acc s-sg s-degree-base masc pre-n;
+        base."ого" : acc s-sg s-degree-base masc pre-n;
+
+        base."ым" : abl s-sg s-degree-base masc pre-n;
+        base."ом" : loc s-sg s-degree-base masc pre-n;
+
+        adj-adj-h-sg-fem(base)
+        adj-adj-h-sg-neut(base)
+        adj-adj-h-pl(base)
+    }
+}
+
+
+  # TODO сиреневый, фиолетовый, голубой
+  adj-adj-h-hardend(красн, q-color, красный)
+  adj-adj-h-hardend(бел, q-color, белый)
+  adj-adj-h-hardend(желт, q-color, жёлтый)
+  adj-adj-h-hardend(черн, q-color, черный)
+  adj-adj-h-hardend(сер, q-color, серый)
+  adj-adj-h-hardend(оранжев, q-color, оранжевый)
+  adj-adj-h-hardend(зелен, q-color, зелен)
+
+  adj-adj-h-softend(дик, q-quality, дикий)
+
+  adj-adj-h-afend(сух, q-state, сухой)
+  adj-adj-h-afend(больш, q-size, большой)
+
+  adj-adj-h-afend-2(боков, m-location, боковой)
+  adj-adj-h-afend-2(электрическ, q-quality, электрический)
+
+  adj-adj-h-hardend(верхн, q-position, верхний)   # todo fixme
+  adj-adj-h-hardend(нижн, q-position, нижний)     # todo fixme
+
+
+
+############ PREPOSITION ############
+
+
+  # TODO рядом с
+
+  word над:Prep(m-location, pred=над) {
+      над: x-location prep-all abl; # (находится) над столом
+  }
+
+  word под:Prep(m-location, pred=под) {
+      под: x-location prep-all acc; # (положить) под стол
+      под: x-location prep-all abl; # (находится) под столом
+  }
+
+  word на:Prep(m-location, pred=на) {
+      на: x-location prep-all acc;  # (положи) на стол
+      на: x-location prep-all loc;  # (лежит) на столе
+  }
+
+  word в:Prep(m-location, pred=в) {
+      в: x-location prep-all acc;   # (положи) в стол
+      в: x-location prep-all loc;   # (лежит) в столе
+  }
+
+  word у:Prep(m-location, pred=у) {
+      у: x-location prep-all gen;   # (лежит) у стола
+  }
+
+  word наверху:Prep(m-location, pred=наверху) {
+      наверху: x-location prep-all gen;   # (лежит) наверху стола
+  }
+
+  word сверху:Prep(m-location, pred=сверху) {
+      сверху: x-location prep-all gen;   # (лежит) сверху стола
+  }
+
+  word около:Prep(m-location, pred=около) {
+      около: x-location prep-all gen;   # (лежит) около стола
+  }
+
+  word возле:Prep(m-location, pred=возле) {
+      возле: x-location prep-all gen;   # (лежит) возле стола
+  }
+
+
+
+  # (кошка и собака)
+  word и-coord-np : Coord-np-(entity, pred=и) {
+      и: s-pl pl;
+  }
+
+  # (большой и сильный) + N
+  word и-coord-adj : Coord-adj-(quality, pred=и) {
+      и ;
+  }
+
+  # (взял и сделал), (возьми и подними) + NP
+  word и-coord-s : Coord-s-(event, pred=и) {
+      и ;
+  }
+
+testbed {
+
+    # demo 1
+    лампа: 2;
+    лампы: 5;
+    включи лампу: 1;
+    включи лампы: 1;
+    включи лампу на кухне;
+    включи лампу и подсветку: 1;
+    включи лампу и подсветку на кухне: 2;
+    включи лампу на кухне и подсветку: 1;  # без согласования падежей строка "кухне и подсветку" может получить категорию N, это ошибка
+    красная лампа: 1;
+    включи красную лампу в прихожей и подсветку на кухне: 4;
+    включи красную лампу и выключи лампу и подсветку на кухне: 6;
+    выключи красную и синюю лампы: 3;     # TODO
+
+    # определительная генетивная конструкция
+    # TODO
+
+}

@@ -1,0 +1,30 @@
+This is the MCFull algorithm from HLMC by L. Dragone and the original tests.
+
+
+******************************************************
+*   original documentation for HLMC formula format   *
+******************************************************
+
+
+Formula syntax
+
+The formula is read from the stdin and it is parsed according the following grammar
+
+formula ::= exp
+exp 	::= id					propositional symbol, nominal or variable identifier
+	| T					true constant
+	| F					false constant
+	| ! exp					not
+	| exp & exp				and
+	| exp '|' exp				or
+	| exp -> exp				implies
+	| < id > ( exp )			diamond
+	| < id > - ( exp )			inverse diamond
+	| [ id ] ( exp )			box
+	| [ id ] - ( exp )			inverse box
+	| E exp					exists
+	| A exp					for all
+	| @ id ( exp )				at
+	| B id ( exp )				bind variable
+	| ( exp )
+id 	::= [a-z_][a-zA-Z0-9_]

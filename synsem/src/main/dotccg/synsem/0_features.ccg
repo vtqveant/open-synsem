@@ -1,0 +1,196 @@
+#############################################################
+#                                                           #
+#                    synsem.ccg                             #
+#                                                           #
+#############################################################
+
+# adopted from MOLOKO grammar (CoSy project, DFKI Labs/Saarbrucken Univ.)
+
+#
+# TODO
+#
+#  - морфология для прилагательных в moloko (точнее, в англ. языке) отсутствует как таковая, соотв. куча ошибочных разборов
+#  - налабать визуализатор для HLDS в виде AVM
+#  - coord(and, adv, modifier)            # (внезапно и громко) + VP
+#  - запилить "синий" и т.п. (макросы для правильных окончаний)
+#
+#
+
+
+############### Features #################
+
+##
+## ONTOLOGICAL FEATURES
+##
+
+feature {
+    ont-event: event { action };
+
+    ont-entity: entity {
+                     physical{
+                              animate{person},
+                              thing,
+                              e-location{e-region e-place}
+  		             }
+  		    };
+
+    ont-quality: quality {
+                     q-physical {
+                         q-size
+                         q-shape
+                         q-age
+                         q-color
+                         q-state
+                         q-material
+                     }
+                     q-position{
+                         q-location
+                         q-number {
+                             number-cardinal
+                             number-ordinal
+                             number-id
+                         }
+                         q-temporal
+                         q-discourse
+                     }
+                     q-attitude
+                 };
+
+    ont-modifier: modifier {
+                      m-location
+                      m-probability
+                      m-frequency     # sometimes, often, usually
+                      m-comment       # quite generic 'affect'
+                      m-serial		   # go get that
+                      m-accompaniment # with GJ...
+                      m-instrumental  # with the ball...
+                      m-benefactor    # for ...
+                      m-relational {
+                          m-cause
+                          m-result
+                          m-condition
+                      }
+                      m-purpose       # I went there 'to get it'
+        		      m-intensity
+  	        	      m-comparison
+  		              m-restriction   # ball that I picked up, place where I saw you
+  		              m-attributive   # ход ноги
+                  };
+
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # IMPORTANT:
+  #            'modifier' is used in the grammar.
+  #
+  #            Moreover, any changes to this will require changes in these files:
+  #                  types-classes.ccg, prep.ccg, adv.ccg and (perhaps) verb.ccg
+  #            See these files for specifics.
+  #
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+}
+
+
+##
+## SYNTACTIC FEATURES
+##
+
+# 15 is the feature id for nouns
+# 9 is the feature id for the syntatic subject position
+# 10 is the feature id for sentences
+# 11 is the feature id for finites when 'selected' for by interrogative utterance templates
+#       the finite determines subj agreement and pol, vform & fin.
+# 25 is for adjectives
+# 42 is used for the np compliment in 'I am a man', used to block ' these are a ball'
+
+feature {
+
+  ## Noun features ##
+  NUM<15, 9, 10, 11, 25, 42>:  s-sg s-pl { s-pl-sp s-pl-unsp } s-mass ;  # specific plural (as in 3 balls) or unspecific (balls)
+  PERS<15, 9, 10, 11>: non-3rd {1st 2nd} 3rd;
+  GEND<15, 9, 25>: gend-common { masc fem neut };
+  CASE<15, 9, 25>: nom gen dat acc abl loc;
+  NFORM<15, 9, 11>: nf-real { full pro nf-ctxt } nf-dummy { dummy-there };  # full form vs pronoun vs none (as in 'I will take the green')
+
+  ## Sentence/Verbal Features ##
+  MOOD<10>:   s-major { s-ind s-imp s-int s-ind-ell s-mood-mixed } s-minor s-dependent;
+  POL<10,11>: s-pos s-prov-pos s-neg;
+
+  # vf-be (am able to)  for-ing (thanks for helping me), fin-ctxt (I did), fin-deictic (I said that) , fin-full (all other finite events)
+  # Need two layers b/c any thing which wants a finite-s can take a deictic (I said that, before that, etc.) BUT must the ind-building rule
+  # only wants fin-ctxt or full
+  #
+  # Aug 20 added ell-subj as vform... may be useful. Should eventually take out of s-mood, me thinks.
+  VFORM<10,11>: fin { fin-clause { fin-ctxt fin-ell fin-full } fin-deictic } vf-base vf-to-imp inf ing pp vf-be for-ing;
+
+  ## Adj/Adv Features ##
+  DEGREE<25>: s-no-degrees s-degrees { s-degree-base s-comparative s-superlative };
+
+} # end feature
+
+
+
+
+## SEMANTIC FEATURES #
+
+# Note: currently a 'redundancy' for proximity. Can't re-use feature-value names
+#       so must have, e.g., distal, e-distal and m-distal corresponding to
+#       THAT ball, who said THAT, OVER on the table (or THERE)
+#
+# NOTE: This could be resolved by changing all the relevant cats to having same
+#       Index, e.g. preps and deictic events could receive, respectively:
+#                  pp[T] / np[A]  :  T:modifier( * <Anchor>A:entity )
+#                  s[T]            : T:event(context)
+#       in other words, enforcing the index variables chosen is not at all important
+
+feature {
+
+  ## ENTITY ##
+  NUMBER<T:Num>: sg pl;
+
+  ## EVENT ##
+  POLARITY<E:Polarity>: pos neg;
+  MOOD<E:Mood>: ind imp int;
+  TENSE<E:Tense>: past pres fut;
+  ASPECT<E:Aspect>: continuous perfect;
+  VOICE<E:Voice>: active passive;
+  E-PROXIMITY<E:Proximity>: e-distal e-proximal;
+
+  ## MOD ##
+  DEGREE<M:Degree>: no-degrees degrees { degree-base comparative superlative };
+  M-PROXIMITY<M:Proximity>: m-distal m-proximal;
+
+} # end feature
+
+
+## Modifier restrictions
+feature {
+
+  MOD-TYPE<25>:  x-location;
+
+#############################
+## Combinatorial Behaviour ##
+#############################
+
+  # These are the features which determine the syntactic behaviour of modifiers (where they can be).
+  # Each modifer POS (adv, pp) has a rule for each of these saying,
+  # e.g, 'if you are allowed to pre-modify sentences, then I'll turn you into a pre-modifier '
+
+  # Each modifier lexically (in the dictionary) chooses its syntactic 'class'
+
+  CC-TYPE<25, 15>: post-s post-s-loose pre-s pre-vp post-vp
+                   pre-cop-comp   # I am ALSO big,  it is CERTAINLY not a ball
+                   post-n pre-n
+         	       cc-none
+
+  ## Prepositions Classes ## (NEW CAN EASILY BE MODIFIED/EXTENDED)
+  prep-all [post-n post-s post-vp pre-s]
+  prep-1   [post-n post-s post-vp      ]
+  prep-2   [       post-s post-vp      ]
+  prep-3   [post-n                     ]
+  prep-4   [       post-s post-vp pre-s]
+
+  # Note: adverb and nominal classes were removed for readability, s. Moloko
+
+  ;
+} # end feature
+

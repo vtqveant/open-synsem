@@ -1,0 +1,331 @@
+# TODO
+# наверху сверху внизу снизу
+# весь всё
+
+
+
+
+############ VERB ############
+
+  # imperative rule will be applied to a form marked with "vf-to-imp"
+  word включать:tv(action, pred=ON) {
+      включи: imp vf-to-imp;
+      включить: imp vf-to-imp;
+  }
+
+  word выключать:tv(action, pred=OFF) {
+      выключи: imp vf-to-imp;
+      выключить: imp vf-to-imp;
+  }
+
+  word открывать:tv(action, pred=OPEN) {
+      открой: imp vf-to-imp;
+      открыть: imp vf-to-imp;
+  }
+
+  word закрывать:tv(action, pred=CLOSE) {
+      закрой: imp vf-to-imp;
+      закрыть: imp vf-to-imp;
+  }
+
+
+############ NOUN ############
+
+word диван:Noun(thing, pred=диван) {
+    диван: s-sg nom masc;
+    дивана: s-sg gen masc;
+    диван: s-sg acc masc;
+    диваном: s-sg abl masc;
+    диване: s-sg loc masc;
+
+    диваны: s-pl nom masc;
+    диванов: s-pl gen masc;
+    диваны: s-pl acc masc;
+    диванами: s-pl abl masc;
+    диванах: s-pl loc masc;
+}
+
+word зеркало:Noun(thing, pred=зеркало) {
+    зеркало:  s-sg nom neut;
+    зеркала:  s-sg gen neut;
+    зеркало:  s-sg acc neut;
+
+    зеркала:  s-pl nom neut;
+    зеркал:  s-pl gen neut;
+    зеркала:  s-pl acc neut;
+}
+
+word кровать:Noun(thing, pred=кровать) {
+    кровать:  s-sg nom fem;
+    кровати:  s-sg gen fem;
+    кровать:  s-sg acc fem;
+
+    кровати:  s-pl nom fem;
+    кроватей:  s-pl gen fem;
+    кровати:  s-pl acc fem;
+}
+
+  word свет:Noun(thing, pred=свет) {
+      свет:   s-sg nom masc;
+      света:  s-sg gen masc;
+      свет:   s-sg acc masc;
+  }
+
+  word лампа:Noun(thing, pred=лампа) {
+      лампа:  s-sg nom fem;
+      лампы:  s-sg gen fem;
+      лампу:  s-sg acc fem;
+
+      лампы:  s-pl nom fem;
+      ламп:   s-pl gen fem;
+      лампы:  s-pl acc fem;
+  }
+
+  word лампочка:Noun(thing, pred=лампочка) {
+      лампочка: s-sg nom fem;
+      лампочек: s-sg gen fem;
+      лампочку: s-sg acc fem;
+
+      лампочки: s-pl nom fem;
+      лампочек: s-pl gen fem;
+      лампочки: s-pl acc fem;
+  }
+
+  word стол:Noun(e-location, pred=стол) {
+      стол: s-sg nom masc;
+      стола: s-sg gen masc;
+      столу: s-sg dat masc;
+      стол: s-sg acc masc;
+      столом: s-sg abl masc;
+      столе: s-sg loc masc;
+  }
+
+  word кухня:Noun(e-place, pred=кухня) {
+      кухня: s-sg nom fem;
+      кухни: s-sg gen fem;
+      кухне: s-sg loc fem;
+  }
+
+  word прихожая:Noun(e-place, pred=прихожая) {
+      прихожая: s-sg nom fem;
+      прихожей: s-sg gen fem;
+      прихожей: s-sg abl fem;
+  }
+
+
+############ ADJECTIVE ############
+
+
+###
+### Склонение прилагательных
+###
+### А вообще, лучше всего экспортировать из AOT и конвертнуть в наш формат автоматически. А это так, баловство...
+###
+
+# Прилаг. склоняются по родам, числам и падежам.
+# Различают два склонения прилагательных: адъективное (твердая и мягкая разновидности) и смешанное.
+
+
+# Адъективное склонение, твердая разновидность
+
+def adj-adj-h-sg-fem(base) {
+        # sg, fem
+        base."ая" : nom s-sg s-degree-base fem  pre-n;
+        base."ой" : gen s-sg s-degree-base fem  pre-n;
+        base."ой" : dat s-sg s-degree-base fem  pre-n;
+        base."ую" : acc s-sg s-degree-base fem  pre-n;
+        base."ой" : abl s-sg s-degree-base fem  pre-n;
+        base."ой" : loc s-sg s-degree-base fem  pre-n;
+}
+
+def adj-adj-h-sg-neut(base) {
+        # sg, neut
+        base."ое" : nom s-sg s-degree-base neut pre-n;
+        base."ого": gen s-sg s-degree-base neut pre-n;
+        base."ому" : dat s-sg s-degree-base neut pre-n;
+        base."ое" : acc s-sg s-degree-base neut pre-n;
+        base."ым" : abl s-sg s-degree-base neut pre-n;
+        base."ом" : loc s-sg s-degree-base neut pre-n;
+}
+
+def adj-adj-h-pl(base) {
+        # pl
+        base."ые" : nom s-pl s-degree-base pre-n;
+        base."ых" : gen s-pl s-degree-base pre-n;
+        base."ым" : dat s-pl s-degree-base pre-n;
+        base."ые" : acc s-pl s-degree-base pre-n;
+        base."ыми": abl s-pl s-degree-base pre-n;
+        base."ых" : loc s-pl s-degree-base pre-n;
+}
+
+# адъективное склонение, твердая разновидность для основ на твердую согласную (напр., белый)
+def adj-adj-h-hardend(base, attr, pred) {
+    # бел-ый
+    word base."ый".-adj:Adj(attr, pred=pred) {
+        # sg, masc
+        base."ый" : nom s-sg s-degree-base masc pre-n;
+        base."ого": gen s-sg s-degree-base masc pre-n;
+        base."ому": dat s-sg s-degree-base masc pre-n;
+
+        # two forms for acc
+        base."ый" : acc s-sg s-degree-base masc pre-n;
+        base."ого" : acc s-sg s-degree-base masc pre-n;
+
+        base."ым" : abl s-sg s-degree-base masc pre-n;
+        base."ом" : loc s-sg s-degree-base masc pre-n;
+
+        adj-adj-h-sg-fem(base)
+        adj-adj-h-sg-neut(base)
+        adj-adj-h-pl(base)
+    }
+}
+
+# адъективное склонение, твердая разновидность для основ на мягкую согласную (напр., дикий)   # TODO дикие - некорректно! (возможно, можно регуляркой потом пофиксить)
+def adj-adj-h-softend(base, attr, pred) {
+    # бел-ый
+    word base."ий".-adj:Adj(attr, pred=pred) {
+        # sg, masc
+        base."ий" : nom s-sg s-degree-base masc pre-n;
+        base."ого": gen s-sg s-degree-base masc pre-n;
+        base."ому": dat s-sg s-degree-base masc pre-n;
+
+        # two forms for acc
+        base."ий" : acc s-sg s-degree-base masc pre-n;
+        base."ого" : acc s-sg s-degree-base masc pre-n;
+
+        base."им" : abl s-sg s-degree-base masc pre-n;
+        base."ом" : loc s-sg s-degree-base masc pre-n;
+
+        adj-adj-h-sg-fem(base)
+        adj-adj-h-sg-neut(base)
+        adj-adj-h-pl(base)
+    }
+}
+
+# адъективное склонение, твердая разновидность для основ на шипящую согласную (напр., сухой)    # TODO сухие - некорректно! (возможно, можно регуляркой потом пофиксить)
+def adj-adj-h-afend(base, attr, pred) {
+    # бел-ый
+    word base."ой".-adj:Adj(attr, pred=pred) {
+        # sg, masc
+        base."ой" : nom s-sg s-degree-base masc pre-n;
+        base."ого": gen s-sg s-degree-base masc pre-n;
+        base."ому": dat s-sg s-degree-base masc pre-n;
+
+        # two forms for acc
+        base."ой" : acc s-sg s-degree-base masc pre-n;
+        base."ого" : acc s-sg s-degree-base masc pre-n;
+
+        base."им" : abl s-sg s-degree-base masc pre-n;
+        base."ом" : loc s-sg s-degree-base masc pre-n;
+
+        adj-adj-h-sg-fem(base)
+        adj-adj-h-sg-neut(base)
+        adj-adj-h-pl(base)
+    }
+}
+
+# напр., боковой
+def adj-adj-h-afend-2(base, attr, pred) {
+    # бел-ый
+    word base."ой".-adj:Adj(attr, pred=pred) {
+        # sg, masc
+        base."ой" : nom s-sg s-degree-base masc pre-n;
+        base."ого": gen s-sg s-degree-base masc pre-n;
+        base."ому": dat s-sg s-degree-base masc pre-n;
+
+        # two forms for acc
+        base."ой" : acc s-sg s-degree-base masc pre-n;
+        base."ого" : acc s-sg s-degree-base masc pre-n;
+
+        base."ым" : abl s-sg s-degree-base masc pre-n;
+        base."ом" : loc s-sg s-degree-base masc pre-n;
+
+        adj-adj-h-sg-fem(base)
+        adj-adj-h-sg-neut(base)
+        adj-adj-h-pl(base)
+    }
+}
+
+
+  # TODO сиреневый, фиолетовый, голубой
+  adj-adj-h-hardend(красн, q-color, красный)
+  adj-adj-h-hardend(бел, q-color, белый)
+  adj-adj-h-hardend(желт, q-color, жёлтый)
+  adj-adj-h-hardend(черн, q-color, черный)
+  adj-adj-h-hardend(сер, q-color, серый)
+  adj-adj-h-hardend(оранжев, q-color, оранжевый)
+  adj-adj-h-hardend(зелен, q-color, зелен)
+
+  adj-adj-h-softend(дик, q-quality, дикий)
+
+  adj-adj-h-afend(сух, q-state, сухой)
+  adj-adj-h-afend(больш, q-size, большой)
+
+  adj-adj-h-afend-2(боков, m-location, боковой)
+  adj-adj-h-afend-2(электрическ, q-quality, электрический)
+
+  adj-adj-h-hardend(верхн, q-position, верхний)   # todo fixme
+  adj-adj-h-hardend(нижн, q-position, нижний)     # todo fixme
+
+
+
+############ PREPOSITION ############
+
+
+  # TODO рядом с
+
+  word над:Prep(m-location, pred=над) {
+      над: x-location prep-all abl; # (находится) над столом
+  }
+
+  word под:Prep(m-location, pred=под) {
+      под: x-location prep-all acc; # (положить) под стол
+      под: x-location prep-all abl; # (находится) под столом
+  }
+
+  word на:Prep(m-location, pred=на) {
+      на: x-location prep-all acc;  # (положи) на стол
+      на: x-location prep-all loc;  # (лежит) на столе
+  }
+
+  word в:Prep(m-location, pred=в) {
+      в: x-location prep-all acc;   # (положи) в стол
+      в: x-location prep-all loc;   # (лежит) в столе
+  }
+
+  word у:Prep(m-location, pred=у) {
+      у: x-location prep-all gen;   # (лежит) у стола
+  }
+
+  word наверху:Prep(m-location, pred=наверху) {
+      наверху: x-location prep-all gen;   # (лежит) наверху стола
+  }
+
+  word сверху:Prep(m-location, pred=сверху) {
+      сверху: x-location prep-all gen;   # (лежит) сверху стола
+  }
+
+  word около:Prep(m-location, pred=около) {
+      около: x-location prep-all gen;   # (лежит) около стола
+  }
+
+  word возле:Prep(m-location, pred=возле) {
+      возле: x-location prep-all gen;   # (лежит) возле стола
+  }
+
+
+
+  # (кошка и собака)
+  word и-coord-np : Coord-np-(entity, pred=и) {
+      и: s-pl pl;
+  }
+
+  # (большой и сильный) + N
+  word и-coord-adj : Coord-adj-(quality, pred=и) {
+      и ;
+  }
+
+  # (взял и сделал), (возьми и подними) + NP
+  word и-coord-s : Coord-s-(event, pred=и) {
+      и ;
+  }

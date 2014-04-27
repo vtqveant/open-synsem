@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hl-kripke-struct SYSTEM "hl-ks.dtd">
+<hl-kripke-struct name="M">
+	<world label="w1"/>
+	<world label="w2"/>
+	<world label="w3"/>
+	<modality label="pi1">
+		<acc-pair to-world-label="w2" from-world-label="w1"/>
+		<acc-pair to-world-label="w3" from-world-label="w1"/>		
+	</modality> 
+	<modality label="pi2">
+		<acc-pair to-world-label="w3" from-world-label="w2"/>
+	</modality>
+	<prop-sym label="p" truth-assignments="w1 w2"/>
+	<prop-sym label="q" truth-assignments="w3"/>
+	<prop-sym label="r" truth-assignments="w1 w3"/>
+	<nominal label="i" truth-assignment="w1"/>
+	<nominal label="j" truth-assignment="w2"/>
+	<nominal label="k" truth-assignment="w2"/>
+</hl-kripke-struct>

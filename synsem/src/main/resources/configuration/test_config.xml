@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <locations>
+        <location id="0">
+            <names>
+                <variant>кухня</variant>
+                <variant>кухонька</variant>
+            </names>
+            <adjacent>
+                <id>2</id>
+            </adjacent>
+        </location>
+        <location id="1">
+            <names>
+                <variant>комната</variant>
+            </names>
+            <adjacent>
+                <id>2</id>
+            </adjacent>
+        </location>
+        <location id="2">
+            <names>
+                <variant>прихожая</variant>
+            </names>
+            <adjacent>
+                <id>0</id>
+                <id>1</id>
+            </adjacent>
+        </location>
+    </locations>
+    <devices>
+        <device id="0">
+            <type>lamp</type>
+            <location>0</location>
+            <names>
+                <variant>лампочка на кухне</variant>
+            </names>
+        </device>
+        <device id="1">
+            <type>lamp</type>
+            <location>0</location>
+            <names>
+                <variant>красная лампочка</variant>
+                <variant>лампочка на кухне</variant>
+            </names>
+        </device>
+        <device id="2">
+            <type>lamp</type>
+            <location>0</location>
+            <names>
+                <variant>желтая лампа</variant>
+                <variant>лампа на кухне</variant>
+                <variant>лампа на столе</variant>
+            </names>
+        </device>
+        <device id="3">
+            <type>lamp</type>
+            <location>0</location>
+            <names>
+                <variant>лампочка в прихожей</variant>
+            </names>
+        </device>
+    </devices>
+</configuration>

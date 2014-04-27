@@ -1,0 +1,15 @@
+@root(
+	<biblio>(
+		<book>(
+			B x (
+				<author>(franceschet)
+				&
+				@root(
+					<biblio>(
+						[book](<author>(franceschet) -> x)
+					)
+				)
+			)
+		)
+	)
+)

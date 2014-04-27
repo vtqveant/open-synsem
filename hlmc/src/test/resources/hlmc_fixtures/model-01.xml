@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hl-kripke-struct SYSTEM "hl-ks.dtd">
+<hl-kripke-struct name="XML">
+	<world label="root_node"/>
+	<world label="index_node"/>
+	
+	<world label="b1"/>
+	<world label="b2"/>
+	<world label="a1"/>
+	
+	<world label="a11"/>
+	<world label="a12"/>
+	<world label="t1"/>	
+	
+	<world label="a21"/>
+	<world label="t2"/>
+	<world label="d2"/>
+	
+	<world label="a31"/>
+	<world label="t3"/>
+	<world label="d3"/>
+	
+	<modality label="biblio">
+		<acc-pair to-world-label="index_node" from-world-label="root_node"/>
+	</modality> 
+	<modality label="book">
+		<acc-pair to-world-label="b1" from-world-label="index_node"/>
+		<acc-pair to-world-label="b2" from-world-label="index_node"/>
+	</modality> 
+	<modality label="paper">
+		<acc-pair to-world-label="a1" from-world-label="index_node"/>
+	</modality> 
+	<modality label="cites">
+		<acc-pair to-world-label="b1" from-world-label="b1"/>
+		<acc-pair to-world-label="a1" from-world-label="b2"/>
+		<acc-pair to-world-label="b2" from-world-label="a1"/>
+	</modality> 
+	
+	<modality label="author">
+		<acc-pair to-world-label="a11" from-world-label="b1"/>
+		<acc-pair to-world-label="a12" from-world-label="b1"/>
+		<acc-pair to-world-label="a21" from-world-label="b2"/>
+		<acc-pair to-world-label="a31" from-world-label="a1"/>
+	</modality> 
+	
+	<modality label="title">
+		<acc-pair to-world-label="t1" from-world-label="b1"/>
+		<acc-pair to-world-label="t2" from-world-label="b2"/>
+		<acc-pair to-world-label="t3" from-world-label="a1"/>
+	</modality> 
+	
+	<modality label="date">
+		<acc-pair to-world-label="d2" from-world-label="b2"/>
+		<acc-pair to-world-label="d3" from-world-label="a1"/>
+	</modality>
+	
+	<prop-sym label="marx" truth-assignments="a11"/>
+	<prop-sym label="de_rijke" truth-assignments="a12"/>
+	<prop-sym label="hybrid_logics" truth-assignments="t1"/>
+	<prop-sym label="franceschet" truth-assignments="a21"/>
+	<prop-sym label="model_checking" truth-assignments="t2 t3"/>
+	<prop-sym label="year_2000" truth-assignments="d2 d3"/>
+	<prop-sym label="afanasiev" truth-assignments="a31"/>
+	
+	<nominal label="root" truth-assignment="root_node"/>
+	<nominal label="bind_x" truth-assignment="b1"/>
+</hl-kripke-struct>

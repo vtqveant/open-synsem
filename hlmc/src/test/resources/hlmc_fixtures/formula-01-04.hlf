@@ -1,0 +1,11 @@
+@ root (
+	<biblio>(
+		<book> (
+			B x (
+				<cites>(
+					! x	& <cites>(x)
+				)
+			)
+		)
+	)
+)

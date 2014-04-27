@@ -1,0 +1,13 @@
+Spartacus is a tableau prover for hybrid logic with global modalities.
+
+http://www.ps.uni-saarland.de/spartacus/
+
+
+According to P. Blackburn, Spartacus is the most efficient prover for HL and outperforms HTab.
+
+We can also extract models, too. Here's how I generated the graph:
+
+ $ ./spartacus --formula="lampa & <num>(sg) & <modifier>(krasnyi) & <modifier>(na & <anchor>(stol & <num>(sg))) & <modifier>(na & <anchor>(kuhnya & <num>(sg)))" \
+--dotFile=/tmp/spartacus.dot
+ $ dot -Tps /tmp/spartacus.dot -o /tmp/spartacus.ps
+

@@ -1,0 +1,5 @@
+B x (
+	<date>(year_2000)
+	&
+	A (<date>(year_2000) -> x)
+)

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+    <key id="label" for="node" attr.name="label" attr.type="string"/>
+    <key id="modality" for="edge" attr.name="modality" attr.type="string"/>
+    <key id="nominals" for="node" attr.name="nominals" attr.type="string"/>
+    <key id="propsymbols" for="node" attr.name="propsymbols" attr.type="string"/>
+    <graph id="G" edgedefault="directed">
+        <node id="m_1">
+            <data key="label">m_1</data>
+        </node>
+        <node id="m_0">
+            <data key="label">m_0</data>
+        </node>
+        <node id="d4c363b6-8710-4933-be43-cdc0e557d191">
+            <data key="label">d4c363b6-8710-4933-be43-cdc0e557d191</data>
+            <data key="propsymbols">кухня</data>
+        </node>
+        <node id="d9f2218b-cb3c-4210-a3ef-bdffcbf19ce6">
+            <data key="label">d9f2218b-cb3c-4210-a3ef-bdffcbf19ce6</data>
+            <data key="propsymbols">прихожая</data>
+        </node>
+        <node id="ea2deac8-38ae-4493-a0d1-62715e0b7225">
+            <data key="label">ea2deac8-38ae-4493-a0d1-62715e0b7225</data>
+            <data key="propsymbols">sg</data>
+        </node>
+        <node id="d6709a0e-fcb7-492e-b5c0-f1c7fdbeca23">
+            <data key="label">d6709a0e-fcb7-492e-b5c0-f1c7fdbeca23</data>
+            <data key="propsymbols">желтый-adj</data>
+        </node>
+        <node id="c56b666c-ccf4-4dd2-828f-817712b962e9">
+            <data key="label">c56b666c-ccf4-4dd2-828f-817712b962e9</data>
+            <data key="propsymbols">sg</data>
+        </node>
+        <node id="29593ebe-98ff-48f9-96fe-dfa70c371ad4">
+            <data key="label">29593ebe-98ff-48f9-96fe-dfa70c371ad4</data>
+            <data key="propsymbols">в</data>
+        </node>
+        <node id="l_0">
+            <data key="label">l_0</data>
+            <data key="nominals">0</data>
+            <data key="propsymbols">кухня, кухонька</data>
+        </node>
+        <node id="l_1">
+            <data key="label">l_1</data>
+            <data key="nominals">1</data>
+            <data key="propsymbols">комната</data>
+        </node>
+        <node id="l_2">
+            <data key="label">l_2</data>
+            <data key="nominals">2</data>
+            <data key="propsymbols">прихожая</data>
+        </node>
+        <node id="4818d831-b753-4310-ace6-6666969ef011">
+            <data key="label">4818d831-b753-4310-ace6-6666969ef011</data>
+            <data key="propsymbols">кухня</data>
+        </node>
+        <node id="a8bd579b-50ec-4916-a834-82769f6adde9">
+            <data key="label">a8bd579b-50ec-4916-a834-82769f6adde9</data>
+            <data key="propsymbols">на</data>
+        </node>
+        <node id="0e9a2ced-3088-4706-86a9-a18f0d9584a2">
+            <data key="label">0e9a2ced-3088-4706-86a9-a18f0d9584a2</data>
+            <data key="propsymbols">кухня</data>
+        </node>
+        <node id="8af830b8-0b05-434e-9df1-7b1fb335352c">
+            <data key="label">8af830b8-0b05-434e-9df1-7b1fb335352c</data>
+            <data key="propsymbols">стол</data>
+        </node>
+        <node id="2007b883-af51-4e12-8bc6-42cd520829c9">
+            <data key="label">2007b883-af51-4e12-8bc6-42cd520829c9</data>
+            <data key="propsymbols">на</data>
+        </node>
+        <node id="n_root">
+            <data key="label">n_root</data>
+            <data key="nominals">root</data>
+        </node>
+        <node id="3">
+            <data key="label">3</data>
+            <data key="nominals">n_3</data>
+            <data key="propsymbols">3, лампочка</data>
+        </node>
+        <node id="2">
+            <data key="label">2</data>
+            <data key="nominals">n_2</data>
+            <data key="propsymbols">2, лампа</data>
+        </node>
+        <node id="1">
+            <data key="label">1</data>
+            <data key="nominals">n_1</data>
+            <data key="propsymbols">1, лампочка</data>
+        </node>
+        <node id="0">
+            <data key="label">0</data>
+            <data key="nominals">n_0</data>
+            <data key="propsymbols">0, лампочка</data>
+        </node>
+        <node id="784cb39b-6d7f-4133-bb5a-d8934c0e5ab1">
+            <data key="label">784cb39b-6d7f-4133-bb5a-d8934c0e5ab1</data>
+            <data key="propsymbols">на</data>
+        </node>
+        <node id="5ddffeea-9d01-4d9c-ab1a-6d601cd5bd32">
+            <data key="label">5ddffeea-9d01-4d9c-ab1a-6d601cd5bd32</data>
+            <data key="propsymbols">на</data>
+        </node>
+        <node id="7335d4bd-fc8c-457c-8866-b38084002217">
+            <data key="label">7335d4bd-fc8c-457c-8866-b38084002217</data>
+            <data key="propsymbols">sg</data>
+        </node>
+        <node id="22bc8c41-e973-4bcc-9e72-409043099499">
+            <data key="label">22bc8c41-e973-4bcc-9e72-409043099499</data>
+            <data key="propsymbols">красный-adj</data>
+        </node>
+        <node id="m_2">
+            <data key="label">m_2</data>
+        </node>
+        <node id="m_3">
+            <data key="label">m_3</data>
+        </node>
+        <node id="243d4931-3c6d-4956-a15a-a6b569e34005">
+            <data key="label">243d4931-3c6d-4956-a15a-a6b569e34005</data>
+            <data key="propsymbols">sg</data>
+        </node>
+        <edge source="3" target="29593ebe-98ff-48f9-96fe-dfa70c371ad4">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="3" target="d9f2218b-cb3c-4210-a3ef-bdffcbf19ce6">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="3" target="m_3">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="2" target="a8bd579b-50ec-4916-a834-82769f6adde9">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="2" target="5ddffeea-9d01-4d9c-ab1a-6d601cd5bd32">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="2" target="d6709a0e-fcb7-492e-b5c0-f1c7fdbeca23">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="2" target="m_2">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="1" target="m_1">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="1" target="22bc8c41-e973-4bcc-9e72-409043099499">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="1" target="2007b883-af51-4e12-8bc6-42cd520829c9">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="0" target="m_0">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="0" target="784cb39b-6d7f-4133-bb5a-d8934c0e5ab1">
+            <data key="modality">modifier</data>
+        </edge>
+        <edge source="4818d831-b753-4310-ace6-6666969ef011" target="ea2deac8-38ae-4493-a0d1-62715e0b7225">
+            <data key="modality">num</data>
+        </edge>
+        <edge source="d4c363b6-8710-4933-be43-cdc0e557d191" target="243d4931-3c6d-4956-a15a-a6b569e34005">
+            <data key="modality">num</data>
+        </edge>
+        <edge source="0e9a2ced-3088-4706-86a9-a18f0d9584a2" target="7335d4bd-fc8c-457c-8866-b38084002217">
+            <data key="modality">num</data>
+        </edge>
+        <edge source="8af830b8-0b05-434e-9df1-7b1fb335352c" target="c56b666c-ccf4-4dd2-828f-817712b962e9">
+            <data key="modality">num</data>
+        </edge>
+        <edge source="n_root" target="3">
+            <data key="modality">device</data>
+        </edge>
+        <edge source="n_root" target="2">
+            <data key="modality">device</data>
+        </edge>
+        <edge source="n_root" target="1">
+            <data key="modality">device</data>
+        </edge>
+        <edge source="n_root" target="0">
+            <data key="modality">device</data>
+        </edge>
+        <edge source="m_1" target="l_0">
+            <data key="modality">anchor</data>
+        </edge>
+        <edge source="m_0" target="l_0">
+            <data key="modality">anchor</data>
+        </edge>
+        <edge source="a8bd579b-50ec-4916-a834-82769f6adde9" target="4818d831-b753-4310-ace6-6666969ef011">
+            <data key="modality">anchor</data>
+        </edge>
+        <edge source="784cb39b-6d7f-4133-bb5a-d8934c0e5ab1" target="d4c363b6-8710-4933-be43-cdc0e557d191">
+            <data key="modality">anchor</data>
+        </edge>
+        <edge source="5ddffeea-9d01-4d9c-ab1a-6d601cd5bd32" target="8af830b8-0b05-434e-9df1-7b1fb335352c">
+            <data key="modality">anchor</data>
+        </edge>
+        <edge source="m_2" target="l_0">
+            <data key="modality">anchor</data>
+        </edge>
+        <edge source="m_3" target="l_0">
+            <data key="modality">anchor</data>
+        </edge>
+        <edge source="2007b883-af51-4e12-8bc6-42cd520829c9" target="0e9a2ced-3088-4706-86a9-a18f0d9584a2">
+            <data key="modality">anchor</data>
+        </edge>
+        <edge source="n_root" target="l_0">
+            <data key="modality">room</data>
+        </edge>
+        <edge source="n_root" target="l_1">
+            <data key="modality">room</data>
+        </edge>
+        <edge source="n_root" target="l_2">
+            <data key="modality">room</data>
+        </edge>
+    </graph>
+</graphml>
