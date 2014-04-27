@@ -8,14 +8,14 @@ See [Materials](http://nlu-rg.ru/materials) page at NLU/RG site for the discussi
 
 ### Credits
 
-OpenCCG by J. Baldrige, M. White et al.
-Hybrid Logic Model Checker by L. Dragone.
-MCFull algorithm by M. Franceschet and M. de Rijke.
-Moloko grammar by Geert-Jan M. Kruijff and Sabrina Wilske (DFKI).
-Textbooks by P. Blackburn and J. Bos.
-Discussion with NLU/RG participants.
-Kind supervision by O. Mitrofanova (St. Petersburg State University).
-Inspired by [Mathlingvo](http://www.mathlingvo.ru).
+ - OpenCCG by J. Baldrige, M. White et al.
+ - Hybrid Logic Model Checker by L. Dragone.
+ - MCFull algorithm by M. Franceschet and M. de Rijke.
+ - Moloko grammar by Geert-Jan M. Kruijff and Sabrina Wilske (DFKI).
+ - Textbooks by P. Blackburn and J. Bos.
+ - Discussion with NLU/RG participants.
+ - Kind supervision by O. Mitrofanova (St. Petersburg State University).
+ - Inspired by [Mathlingvo](http://www.mathlingvo.ru).
 
 
 ----------
