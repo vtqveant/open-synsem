@@ -88,7 +88,6 @@ public class MainClientForm extends JFrame implements IRecognitionListener {
 
         combo.addItem(BackendProfile.Vendor.DUMMY);
         combo.addItem(BackendProfile.Vendor.SPHINX);
-        combo.addItem(BackendProfile.Vendor.GOOGLE);
 
         combo.addActionListener(new ActionListener() {
             @Override
@@ -105,7 +104,7 @@ public class MainClientForm extends JFrame implements IRecognitionListener {
 
 
     public void setBackendProfile(BackendProfile.Vendor backend) {
-        microphone.setAudioFormat(BackendProfile.getAudioFormat(backend));
+        microphone.setAudioFormat(BackendProfile.DEFAULT_AUDIO_FORMAT);
         try {
             recognizer = BackendProfile.getRecognizer(backend);
         } catch (RecognizerException e) {

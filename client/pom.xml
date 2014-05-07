@@ -18,16 +18,6 @@
     <dependencies>
         <dependency>
             <groupId>${project.parent.groupId}</groupId>
-            <artifactId>google-proxy</artifactId>
-            <version>0.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.parent.groupId}</groupId>
-            <artifactId>nuance-proxy</artifactId>
-            <version>0.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.parent.groupId}</groupId>
             <artifactId>sphinx-backend</artifactId>
             <version>0.1.0</version>
         </dependency>
