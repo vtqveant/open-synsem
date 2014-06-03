@@ -385,14 +385,26 @@ word кровать:Noun(thing, pred=кровать) {
     кровать:  s-sg acc fem;
 
     кровати:  s-pl nom fem;
-    кроватей:  s-pl gen fem;
+    кроватей: s-pl gen fem;
     кровати:  s-pl acc fem;
 }
+
+  word шторы:Noun(thing, pred=шторы) {
+      шторы:  s-pl nom fem;
+      штор:   s-pl gen fem;
+      шторы:  s-pl acc fem;
+  }
 
   word свет:Noun(thing, pred=свет) {
       свет:   s-sg nom masc;
       света:  s-sg gen masc;
       свет:   s-sg acc masc;
+  }
+
+  word подсветка:Noun(thing, pred=подсветка) {
+      подсветка:  s-sg nom fem;
+      подсветки:  s-sg gen fem;
+      подсветку:  s-sg acc fem;
   }
 
   word лампа:Noun(thing, pred=лампа) {

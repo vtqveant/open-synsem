@@ -43,6 +43,8 @@ public class Runner {
 
             if (config.isUseTeX()) {
                 String filename = config.getTexDirectory() + "__parse.tex";
+                File f = new File(filename);
+                f.getParentFile().mkdirs();
                 ReportPrinter.dumpReport(hs, filename);
             }
 

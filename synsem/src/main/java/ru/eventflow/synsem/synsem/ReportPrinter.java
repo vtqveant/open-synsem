@@ -85,8 +85,11 @@ public class ReportPrinter {
         sb.append('\n');
         sb.append(h.getLF().prettyPrint("   "));
         sb.append('\n');
+        sb.append('\n');
 
         for (Command command : h.getCommands()) {
+
+            /*
             sb.append("\n");
             sb.append(command.getPredicate());
             sb.append("\t[");
@@ -99,16 +102,20 @@ public class ReportPrinter {
                     sb.append(location.toString());
                 }
             }
+            */
 
             List<Formula> fs = command.getFormulae();
             for (Formula f : fs) {
-                sb.append(">   " + command.getPredicate().toString() + " " +
-                        f.getText() + " : " + flatten(f.getWorlds()));
+                sb.append(">   ");
+                sb.append(command.getPredicate().toString());
+                sb.append(" ");
+                sb.append(f.getText());
+                sb.append(" : ");
+                sb.append(flatten(f.getWorlds()));
+                sb.append('\n');
             }
         }
-        sb.append('\n');
         System.out.println(sb.toString());
-
     }
 
     public static void printReport(Hypothesis h) throws IOException {
