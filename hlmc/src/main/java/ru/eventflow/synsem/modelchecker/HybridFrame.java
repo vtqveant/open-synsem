@@ -1,7 +1,9 @@
 package ru.eventflow.synsem.modelchecker;
 
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Hybrid Kripke frame with various structures to store and resolve symbols.
@@ -73,15 +75,11 @@ public class HybridFrame {
     }
 
     public void setAccessible(String modalityLabel, String fromWorldLabel, String toWorldLabel) {
-        if (!accessibilityRelations.containsKey(modalityLabel)) {
-            accessibilityRelations.put(modalityLabel, new HashMap<String, Set<String>>());
-        }
-        if (!accessibilityRelations.get(modalityLabel).containsKey(fromWorldLabel)) {
-            accessibilityRelations.get(modalityLabel).put(fromWorldLabel, new HashSet<String>());
-        }
+        maybePut(accessibilityRelations, modalityLabel, new HashMap<String, Set<String>>());
+        maybePut(accessibilityRelations.get(modalityLabel), fromWorldLabel, new HashSet<String>());
         accessibilityRelations.get(modalityLabel).get(fromWorldLabel).add(toWorldLabel);
-        if (!worlds.contains(fromWorldLabel)) worlds.add(fromWorldLabel);
-        if (!worlds.contains(toWorldLabel)) worlds.add(toWorldLabel);
+        maybeAdd(worlds, fromWorldLabel);
+        maybeAdd(worlds, toWorldLabel);
     }
 
     boolean isPropSymTrue(String propSymLabel, String worldLabel) {
@@ -90,11 +88,9 @@ public class HybridFrame {
     }
 
     public void setPropSym(String propSymLabel, String worldLabel) {
-        if (!propositionalSymbolAssignments.containsKey(worldLabel)) {
-            propositionalSymbolAssignments.put(worldLabel, new HashSet<String>());
-        }
+        maybePut(propositionalSymbolAssignments, worldLabel, new HashSet<String>());
         propositionalSymbolAssignments.get(worldLabel).add(propSymLabel);
-        if (!propositionalSymbols.contains(propSymLabel)) propositionalSymbols.add(propSymLabel);
+        maybeAdd(propositionalSymbols, propSymLabel);
     }
 
     String getNominalAssign(String nominalLabel) {
@@ -108,10 +104,16 @@ public class HybridFrame {
         nominalAssignments.put(nominalLabel, worldLabel);
 
         // this is maintained for backward lookups
-        if (!nominalsAtWorld.containsKey(worldLabel)) {
-            nominalsAtWorld.put(worldLabel, new HashSet<String>());
-        }
+        maybePut(nominalsAtWorld, worldLabel, new HashSet<String>());
         nominalsAtWorld.get(worldLabel).add(nominalLabel);
+    }
+
+    private static <T> void maybeAdd(Set<T> set, T label) {
+        if (!set.contains(label)) set.add(label);
+    }
+
+    private static <K, V> void maybePut(Map<K, V> map, K key, V value) {
+        if (!map.containsKey(key)) map.put(key, value);
     }
 
     public Set<String> getWorlds() {
