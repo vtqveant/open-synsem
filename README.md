@@ -24,9 +24,10 @@ See [Materials](http://nlu-rg.ru/materials) page at NLU/RG site for the discussi
 #### A note on building with Maven 3
 
 There's a problem with the apporach I use to install jars to a local ``runtime'' repository during compilation,
-which is apparently due to the way Maven 3 does caching. In case there's a problem here's how to work around:
+which is apparently due to the way Maven 3 does caching. In case there's a problem here's a workaround:
 
-> $ mvn validate install -U
+> $ mvn validate
+> $ mvn install -U
 
 Which means, first install the jars and then compile and install the module jar with updates forced.
 Normally with maven2 ``$ mvn install'' works smoothly.

@@ -39,7 +39,6 @@ public class HybridFrameVisualizer {
             modeBox.addItemListener(graphMouse.getModeListener());
             graphMouse.setMode(ModalGraphMouse.Mode.PICKING);
 
-
             vv.getRenderContext().setVertexLabelTransformer(new Transformer<Node, String>() {
                 @Override
                 public String transform(Node node) {
