@@ -22,7 +22,6 @@
         <module>sphinx-backend</module>
         <module>hlmc</module>
         <module>synsem</module>
-        <module>synsem-server</module>
     </modules>
 
     <dependencies>
