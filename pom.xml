@@ -18,8 +18,7 @@
 
     <modules>
         <module>client</module>
-        <module>asr-common</module>
-        <module>sphinx-backend</module>
+        <module>sphinx</module>
         <module>hlmc</module>
         <module>synsem</module>
     </modules>

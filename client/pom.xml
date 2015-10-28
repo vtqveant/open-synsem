@@ -18,7 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.parent.groupId}</groupId>
-            <artifactId>sphinx-backend</artifactId>
+            <artifactId>sphinx</artifactId>
             <version>0.1.0</version>
         </dependency>
         <dependency>
