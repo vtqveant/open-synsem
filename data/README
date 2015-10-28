@@ -5,24 +5,47 @@ Supervised Semantic Parsing of Robotic Spatial Commands
 
 INTRODUCTION
 
-Recent research into semantic parsing has focused on approaches that translate natural language into formal meaning representations. In non-contextual semantic parsing, the aim is to translate directly into meaning representations such as logical form. In contrast, SemEval-2014 Task 6 focuses on contextual semantic parsing of robotic spatial commands, where the additional context of spatial scenes can be used to guide a semantic parser. For example, the command "move the red block on top of the blue cube on the yellow one" is syntactically ambiguous with three plausible readings. These can be disambiguated by knowing the colors, shapes and positions of blocks as context for the command. This additional context provides useful cues for semantically resolving syntactically ambiguous constructions such as verbal argument and prepositional phrase attachment. The challenge for this task will be to either enhance existing approaches (such as CCG semantic parsing) and to include spatial context to guide the parsing process, or to adapt novel approaches for syntactic parsing with semantic disambiguation to the robotic spatial commands domain.
+Recent research into semantic parsing has focused on approaches that translate natural language into formal meaning
+representations. In non-contextual semantic parsing, the aim is to translate directly into meaning representations such
+as logical form. In contrast, SemEval-2014 Task 6 focuses on contextual semantic parsing of robotic spatial commands,
+where the additional context of spatial scenes can be used to guide a semantic parser. For example, the command "move
+the red block on top of the blue cube on the yellow one" is syntactically ambiguous with three plausible readings.
+These can be disambiguated by knowing the colors, shapes and positions of blocks as context for the command. This
+additional context provides useful cues for semantically resolving syntactically ambiguous constructions such as verbal
+argument and prepositional phrase attachment. The challenge for this task will be to either enhance existing approaches
+(such as CCG semantic parsing) and to include spatial context to guide the parsing process, or to adapt novel approaches
+for syntactic parsing with semantic disambiguation to the robotic spatial commands domain.
 
 TRAINING RESOURCES
 
-A new annotated resource has been developed as a dataset for comparing and evaluating different approaches for this task. The Robot Commands Treebank (Dukes, 2013) pairs 3,394 sentences (41,158 words) with a formal Robot Control Language (RCL), manually annotated within the context of spatial scenes. RCL is a linguistically-oriented formal language for controlling a robot arm, that represents entities, attributes, anaphora, ellipsis and qualitative spatial relations. Each scene is a formal description of a discrete 8x8x8 3D game board consisting of colored blocks. Using crowdsourcing, pairs of before and after scenes have been labelled with commands that provide natural language instructions to a robot to pick up, move and rearrange blocks on a game board. In the training data, each command has been translated into RCL. The complete treebank with automatically rendered illustrations can be browsed online:
+A new annotated resource has been developed as a dataset for comparing and evaluating different approaches for this
+task. The Robot Commands Treebank (Dukes, 2013) pairs 3,394 sentences (41,158 words) with a formal Robot Control
+Language (RCL), manually annotated within the context of spatial scenes. RCL is a linguistically-oriented formal
+language for controlling a robot arm, that represents entities, attributes, anaphora, ellipsis and qualitative spatial
+relations. Each scene is a formal description of a discrete 8x8x8 3D game board consisting of colored blocks. Using
+crowdsourcing, pairs of before and after scenes have been labelled with commands that provide natural language
+instructions to a robot to pick up, move and rearrange blocks on a game board. In the training data, each command has
+been translated into RCL. The complete treebank with automatically rendered illustrations can be browsed online:
 
  http://www.trainrobots.com/treebank.jsp
 
 The following resources are available for SemEval-2014 Task 6:
 
-    Training data from the Robot Commands Treebank, consisting of sentences paired with RCL.
-    Word-aligned semantic trees that map RCL elements to natural language words. This additional data can be used to either adapt a lexicon for this domain, or to improve grounded language acquisition components.
-    A spatial planner, made available as a Java API, which takes as input an RCL fragment, and determines if that fragment is compatible with spatial context. For example, providing the RCL input (entity: (type: cube) (color: red)) to the planner will return a list of zero or more red blocks together with their positions, depending on the state of the game board. The planner can also be used to validate possible actions for the robot arm (events in RCL).
+  * Training data from the Robot Commands Treebank, consisting of sentences paired with RCL.
+  * Word-aligned semantic trees that map RCL elements to natural language words. This additional data can be used to
+    either adapt a lexicon for this domain, or to improve grounded language acquisition components.
+  * A spatial planner, made available as a Java API, which takes as input an RCL fragment, and determines if that
+    fragment is compatible with spatial context. For example, providing the RCL input
+    (entity: (type: cube) (color: red)) to the planner will return a list of zero or more red blocks together with
+    their positions, depending on the state of the game board. The planner can also be used to validate possible
+    actions for the robot arm (events in RCL).
 
 
 TASK DESCRIPTION
 
-During evaluation, systems submitted by task participants will be expected to parse previously unseen sentences for new board layouts, and generate the correct corresponding RCL statement. As a simple illustrative example, submitted systems should accept the following sentence as input:
+During evaluation, systems submitted by task participants will be expected to parse previously unseen sentences for
+new board layouts, and generate the correct corresponding RCL statement. As a simple illustrative example, submitted
+systems should accept the following sentence as input:
 
 "Put down the green pyramid."
 
@@ -35,7 +58,8 @@ and produce the following RCL statement as output:
         (type: prism)))
 
 
-However, in contrast to the simple example above, the treebank is challenging to parse because it contains linguistically-complex sentences that include:
+However, in contrast to the simple example above, the treebank is challenging to parse because it contains
+linguistically-complex sentences that include:
 
     Compositional syntax
     Multiword spatial expressions
@@ -47,9 +71,14 @@ A more complicated sentence illustrating this would be:
 
 "Pick up the turquoise pyramid standing over a white cube and place [it] on top of the blue and green tower."
 
-To make this parsing task more tractable, data and tools are provided to train supervised parsers, as well as providing access to spatial context. Finally, for further incentive, it should be noted that the wider consequence of participating in this task is to help work towards an interesting integrated solution that lies at the interface of computational linguistics and robotics research. By combining a parser with the existing provided spatial planner, participants will have completed an end-to-end working system that is able to control a robotic arm within a simulated 3D environment and that can be instructed using lingustically-rich natural language commands.
+To make this parsing task more tractable, data and tools are provided to train supervised parsers, as well as
+providing access to spatial context. Finally, for further incentive, it should be noted that the wider consequence
+of participating in this task is to help work towards an interesting integrated solution that lies at the interface
+of computational linguistics and robotics research. By combining a parser with the existing provided spatial planner,
+participants will have completed an end-to-end working system that is able to control a robotic arm within a simulated
+3D environment and that can be instructed using lingustically-rich natural language commands.
 
 REFERENCES
 
-Kais Dukes (2013). Semantic Annotation of Robotic Spatial Commands. Language and Technology Conference (LTC). Poznan, Poland.
-http://www.kaisdukes.com/papers/spatial-ltc2013.pdf
+Kais Dukes (2013). Semantic Annotation of Robotic Spatial Commands. Language and Technology Conference (LTC). Poznan,
+Poland. http://www.kaisdukes.com/papers/spatial-ltc2013.pdf
