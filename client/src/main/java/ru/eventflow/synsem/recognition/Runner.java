@@ -1,4 +1,4 @@
-package ru.eventflow.synsem.client;
+package ru.eventflow.synsem.recognition;
 
 import javax.swing.*;
 import java.awt.*;

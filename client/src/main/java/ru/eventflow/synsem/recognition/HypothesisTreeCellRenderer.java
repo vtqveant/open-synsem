@@ -1,4 +1,4 @@
-package ru.eventflow.synsem.client;
+package ru.eventflow.synsem.recognition;
 
 import ru.eventflow.asr.recognition.RecognitionHypothesis;
 import ru.eventflow.synsem.model.Hypothesis;

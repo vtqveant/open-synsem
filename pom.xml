@@ -5,7 +5,7 @@
     <packaging>pom</packaging>
 
     <groupId>ru.eventflow</groupId>
-    <artifactId>synsem-meta</artifactId>
+    <artifactId>synsem-parent</artifactId>
     <version>0.1.0</version>
 
     <name>SynSem Meta Project</name>

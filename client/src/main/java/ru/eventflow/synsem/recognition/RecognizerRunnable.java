@@ -1,4 +1,4 @@
-package ru.eventflow.synsem.client;
+package ru.eventflow.synsem.recognition;
 
 import ru.eventflow.asr.recognition.IRecognitionListener;
 import ru.eventflow.asr.recognition.IRecognizer;

@@ -1,4 +1,4 @@
-package ru.eventflow.synsem.client;
+package ru.eventflow.synsem.recognition;
 
 import edu.uci.ics.jung.algorithms.layout.KKLayout;
 import edu.uci.ics.jung.algorithms.layout.Layout;
