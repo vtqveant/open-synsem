@@ -1,6 +1,9 @@
 http://alt.qcri.org/semeval2014/task6/
 
 
+***********************************************************************************************************************
+
+
 Supervised Semantic Parsing of Robotic Spatial Commands
 
 INTRODUCTION
@@ -61,10 +64,10 @@ and produce the following RCL statement as output:
 However, in contrast to the simple example above, the treebank is challenging to parse because it contains
 linguistically-complex sentences that include:
 
-    Compositional syntax
-    Multiword spatial expressions
-    Anaphoric references
-    Ellipsis
+  * Compositional syntax
+  * Multiword spatial expressions
+  * Anaphoric references
+  * Ellipsis
 
 
 A more complicated sentence illustrating this would be:
@@ -82,3 +85,106 @@ REFERENCES
 
 Kais Dukes (2013). Semantic Annotation of Robotic Spatial Commands. Language and Technology Conference (LTC). Poznan,
 Poland. http://www.kaisdukes.com/papers/spatial-ltc2013.pdf
+
+
+
+***********************************************************************************************************************
+
+
+Evaluation
+
+INTRODUCTION
+
+SemEval-2014 Task 6 uses data from The Robot Commands Treebank. The version of the treebank used for this task
+contains a total of 3,409 sentences, each with a corresponding RCL representation and word-alignment data. The use
+of word-alignment data is optional for this task, and is additional supervisory data to be used at the discretion
+of task participants.
+
+DATA SPLIT
+
+For this task, the trial/training/test split of data sourced from the treebank is as follows:
+
+  * Trial data - First 500 sentences in the treebank.
+  * Training data - First 2,500 sentences in the treebank (trial data with an additional 2,000 sentences).
+  * Evaluation data - The remaining 909 sentences positioned at the end of the treebank.
+
+
+EVALUATION DATA
+
+The complete dataset for the treebank is available for download here (all 3,409 sentences):
+semevaltask6_evaldata.zip
+
+Task participants are encouraged to use the Java API (available here) to access this data. For integrated systems,
+the process for using the API to access the spatial planner during evaluation is the same process as during training.
+
+EVALUATION INSTRUCTIONS
+
+During evaluation, participants should perform the following steps:
+
+
+
+1. Evaluation must be performed on a previously trained system. Only training data should be "visible" to the system
+during the training period (i.e. only the previously published first 2,500 sentences in the treebank). Participants
+are expected to stop developing/training their system before evaluation. The remaining 909 sentences in the
+treebank must not be used or made visible during training.
+
+2. To perform evaluation for each of the 909 evaluation sentences, trained systems should be given the sentence as
+input, and produce an RCL representation.
+
+3. Because the use of the API and spatial planner is not mandatory, and to encourage a low barrier to entry for
+task participation, the evaluation metric used will be a simple direct comparison. For each evaluation sentence,
+system output will be judged as correct if it exactly matches the expected RCL, and incorrect otherwise. Using this
+strict metric, a total percentage accuracy score can be computed.
+
+4. Task participants are required to submit two percentage scores, for the accuracy of their system with and without
+using the spatial planner. Participants who are not using the spatial planner should mention this in their
+submission, but should only submit a single accuracy score. Systems not using the spatial planner will not be
+penalized for submitting a single score. Additionally, participants are asked to indicate whether or not
+word-alignment data is used (a breakdown of accuracy with/without word-alignment data is not required in this case,
+but may be interesting to note in your final paper).
+
+5. There is no automated evaluation script for this task. Participants are required to compute accuracy scores as
+part of their submission, using a simple direct match metric.
+
+SUBMISSION
+
+Task participants should have received submission instructions directly from the SemEval-2014 organizers. If you
+have not received submission instructions, please get in touch.
+
+REFERENCES
+
+Because this task uses data from The Robot Commands Treebank, the following two references may be useful to note
+as part of your submission. [1] provides a description of RCL and [2] contains a description of the data collection
+process used to develop the treebank.
+
+[1] Kais Dukes (2013a). Semantic Annotation of Robotic Spatial Commands. Language and Technology Conference (LTC).
+Poznan, Poland.
+http://www.kaisdukes.com/papers/spatial-ltc2013.pdf
+
+[2] Kais Dukes (2013b). Train Robots: A Dataset for Natural Language Human-Robot Spatial Interaction through
+Verbal Commands. International Conference on Social Robotics (ICSR). Embodied Communication of Goals and Intentions
+Workshop. Bristol.
+http://www.kaisdukes.com/papers/spatial-icsr2013.pdf
+
+
+***********************************************************************************************************************
+
+
+Results
+
+TASK SUMMARY
+
+This page lists submitted results for SemEval-2014 Task 6: Supervised Semantic Parsing of Robotic Spatial Commands.
+As described in the evaluation section, this task uses data from The Robot Commands Treebank. Percentage accuracy
+scores are shown below, with and without integrated spatial planning for additional situational context.
+
+SUBMITTED RESULTS
+
+
+Team and Affiliation 	Method (Statistical or rule-based) 	Results (parsing with integrated spatial planning) 	Results (parsing without integrated spatial planning)
+Packard (University of Washington) 	Hybrid (rule-based English resource grammar, with statistical Berkeley parser for back-off) 	92.50 	90.50
+Jung and Stoyanchev (AT&T Labs Research) 	Statistical (statistical maximum entropy parsing) 	87.35 	60.84
+Evang and Bos (University of Groningen) 	Statistical (combinatory categorial grammar with structured perceptron) 	86.80 	79.21
+Ljunglöf (University of Gothenburg) 	Rule-based (hand-crafted grammar) 	86.10 	51.50
+Mattelaer, Verbeke and Nitti (Katholieke Universiteit Leuven) 	Statistical (combinatory categorial grammar parsing) 	71.29 	57.76
+Kate (University of Wisconsin-Milwaukee) 	Statistical (Krisp parser) 	- 	45.98
