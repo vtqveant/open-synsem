@@ -15,35 +15,21 @@
     <name>Sphinx Speech Recognition Backend</name>
     <description>Speech Recognition Backend based on CMU Sphinx</description>
 
-    <properties>
-        <localRepositoryPath>target/repo</localRepositoryPath> <!-- cool stuff, see maven-install-plugin -->
-    </properties>
-
     <dependencies>
         <dependency>
-            <groupId>${project.parent.groupId}</groupId>
-            <artifactId>asr-common</artifactId>
-            <version>0.1.0</version>
-        </dependency>
-
-        <!-- Sphinx4 local deps -->
-        <dependency>
-            <groupId>edu.cmu</groupId>
-            <artifactId>sphinx4</artifactId>
-            <version>1.0beta6</version>
+            <groupId>edu.cmu.sphinx</groupId>
+            <artifactId>sphinx4-core</artifactId>
+            <version>5prealpha-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
     <build>
-
         <resources>
             <resource>
                 <directory>${basedir}/src/main/resources</directory>
             </resource>
         </resources>
-
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -68,40 +54,19 @@
                     </execution>
                 </executions>
             </plugin>
-
-
-            <!-- http://stackoverflow.com/questions/2065928/maven-2-assembly-with-dependencies-jar-under-scope-system-not-included -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>2.3.1</version>
-                <executions>
-                    <execution>
-                        <id>install-sphinx-library</id>
-                        <phase>validate</phase>
-                        <configuration>
-                            <file>${basedir}/lib/sphinx4.jar</file>
-                            <groupId>edu.cmu</groupId>
-                            <artifactId>sphinx4</artifactId>
-                            <version>1.0beta6</version>
-                            <packaging>jar</packaging>
-                            <generatePom>true</generatePom>
-                            <repositoryLayout>default</repositoryLayout>
-                            <localRepositoryPath>${localRepositoryPath}</localRepositoryPath>
-                        </configuration>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
     <repositories>
         <repository>
-            <id>runtime-repository</id>
-            <url>file://${basedir}/${localRepositoryPath}</url>
+            <id>snapshots-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 

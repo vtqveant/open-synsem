@@ -41,7 +41,7 @@ public class SphinxRecognizer implements IRecognizer {
 
         // configure the audio input for the recognizer
         StreamDataSource streamDataSource = (StreamDataSource) cm.lookup("streamDataSource");
-        streamDataSource.setInputStream(audioIn, "unused_stream_id");
+        streamDataSource.setInputStream(audioIn);
 
         // Loop until last utterance in the audio file has been decoded, in which case the recognizer will return null.
         List<RecognitionHypothesis> hs = new ArrayList<RecognitionHypothesis>();
