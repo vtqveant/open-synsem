@@ -11,18 +11,18 @@
     <packaging>jar</packaging>
 
     <artifactId>client</artifactId>
-    <version>${project.parent.version}</version>
+    <version>0.1.0</version>
     <name>Client</name>
     <description>A desktop client for speech recognition</description>
 
     <dependencies>
         <dependency>
-            <groupId>${project.parent.groupId}</groupId>
+            <groupId>ru.eventflow</groupId>
             <artifactId>sphinx</artifactId>
             <version>0.1.0</version>
         </dependency>
         <dependency>
-            <groupId>${project.parent.groupId}</groupId>
+            <groupId>ru.eventflow</groupId>
             <artifactId>synsem</artifactId>
             <version>0.1.0</version>
         </dependency>
